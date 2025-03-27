@@ -50,28 +50,38 @@
             background-color: darkblue;
         }
 
-        .servics {
-            display: flex;
-            justify-content: space-around; /* Space out the service cards evenly */
-            flex-wrap: wrap; /* Allow wrapping of service cards */
-            margin: 40px 0;
-        }
+/* Services Section */
+.servics {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between items */
+    padding: 40px 20px; /* Padding for the section */
+    max-width: 1200px; /* Max width for the section */
+    margin: auto; /* Center the section */
+}
 
-        .servic {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 1px;
-           margin: 10px;
-            width: 20%; /* Set width to 30% for three columns */
-                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            text-align: center; /* Center text within each service card */
-        }
+.servic {
+    background-color: #fff; /* White background for service items */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside service items */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effects */
+}
 
-        .servic:hover {
-            transform: scale(1.05); /* Slightly enlarge on hover */
-        }
+.servic:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.servic h3 {
+    color: #003366; /* Darker blue for headings */
+    margin-bottom: 10px; /* Space below headings */
+}
+
+.servic p {
+    color: #666; /* Gray color for paragraph text */
+}
 
         .testimonials {
             background-color: white;
