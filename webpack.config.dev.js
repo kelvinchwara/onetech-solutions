@@ -8,6 +8,8 @@ module.exports = merge(common, {
     liveReload: true,
     hot: true,
     open: true,
-    static: ['./'],
+    static: ['./'], // Serve static files from the current directory
+    allowedHosts: 'all', // Allow all hosts to avoid "Invalid Host Header" error
+
   },
 });
