@@ -30,15 +30,21 @@
 
     <header>
         <h1>Onetech Solutions</h1>
-
-    </header>
+       </header>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="team.html">Our Team</a>
-        <a href="contact.html">Contact</a>
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="team.html">Our Team</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </nav>
 
 
@@ -104,6 +110,15 @@
 
 
     <footer> <p>&copy; 2025 Onetech Solutions. All rights reserved.</p> </footer>
+<script>
+        // JavaScript for the hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active'); // Toggle the 'active' class
+        });
+    </script>
 </body>
 
 </html>

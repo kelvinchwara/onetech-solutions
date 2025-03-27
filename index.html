@@ -7,20 +7,72 @@
     <title>Onetech Solutions | Innovative Tech Services</title>
     <link rel="stylesheet" href="css/style.css">
     <meta name="description" content="Onetech Solutions offers innovative tech services including UX design, SEO, content creation, and more.">
-
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
-
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-    <!-- Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
 
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between; /* Space between hamburger and links */
+            align-items: center; /* Center items vertically */
+            padding: 10px 20px;
+            background-color: #333; /* Background color for the nav */
+        }
+
+        .nav-links {
+            display: flex; /* Default display for larger screens */
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .hamburger {
+            display: none; /* Hide by default */
+            flex-direction: column; /* Stack lines vertically */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .line {
+            height: 3px; /* Height of each line */
+            width: 25px; /* Width of each line */
+            background-color: white; /* Color of the lines */
+            margin: 3px 0; /* Space between lines */
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide links by default on mobile */
+                flex-direction: column; /* Stack links vertically */
+                position: absolute; /* Position links absolutely */
+                top: 60px; /* Position below the nav */
+                right: 0; /* Align to the right */
+                background-color: #333; /* Background color for dropdown */
+                width: 100%; /* Full width */
+            }
+
+            .nav-links.active {
+                display: flex; /* Show links when active */
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger icon on mobile */
+            }
+        }
 
         .hero {
             background: url('hero-image.jpg') no-repeat center center/cover; /* Add a background image */
@@ -61,18 +113,18 @@
         }
 
         .servic {
-                        background-color: #fff;
+            background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
             padding: 20px;
             margin: 10px;
             width: 30%; /* Set width to 30% for three columns */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
             text-align: center; /* Center text within each service card */
         }
 
-        .service:hover {
+        .servic:hover {
             transform: scale(1.05); /* Slightly enlarge on hover */
         }
 
@@ -100,30 +152,43 @@
             margin-bottom: 15px;
         }
 
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
 
-
-
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
-
     <header>
         <h1>Onetech Solutions</h1>
-    </header>
-
+       </header>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="team.html">Our Team</a>
-        <a href="contact.html">Contact</a>
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="team.html">Our Team</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </nav>
 
     <div class="hero">
         <h2>Welcome to Onetech Solutions</h2>
-      <script src="js/app.js"></script>
         <p>Ready to clear your worries on tech-related problems? Look no further, Onetech has got you covered!</p>
         <a href="#contact" class="cta-button">Get Started</a>
     </div>
@@ -174,7 +239,7 @@
                 </div>
                 <div class="swiper-slide">
                     <img src="client2.jpg" alt="Client 2">
-                    <p>"Amazing experience, will definitely use again!"</p>
+                                        <p>"Amazing experience, will definitely use again!"</p>
                     <p><strong>- Client Name 2</strong></p>
                 </div>
                 <div class="swiper-slide">
@@ -215,6 +280,14 @@
                 disableOnInteraction: false,
             },
             loop: true, // Loop through testimonials
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active'); // Toggle the 'active' class
         });
     </script>
 </body>
