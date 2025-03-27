@@ -22,6 +22,21 @@ module.exports = merge(common, {
             filename: 'services.html', // Output filename
             inject: 'body', // Inject scripts into the body
         }),
+       new HtmlWebpackPlugin({
+            template: '.projects.html', // Path to your services.html template
+            filename: 'projects.html', // Output filename
+            inject: 'body', // Inject scripts into the body
+        }),
+       new HtmlWebpackPlugin({
+            template: '.team.html', // Path to your services.html template
+            filename: 'team.html', // Output filename
+            inject: 'body', // Inject scripts into the body
+        }),
+       new HtmlWebpackPlugin({
+            template: '.contact.html', // Path to your services.html template
+            filename: 'contact.html', // Output filename
+            inject: 'body', // Inject scripts into the body
+        }),
         new CopyPlugin({
             patterns: [
                 { from: 'img', to: 'img' },
