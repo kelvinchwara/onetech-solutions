@@ -357,11 +357,11 @@ footer p {
 /* Team Introduction Styles */
 .team-introduction {
     background-color: #f9f9f9; /* Light background color */
-    padding: 40px 20px; /* Padding for the section */
+    padding: 40px 10px; /* Padding for the section */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     max-width: 1200px; /* Max width for the section */
-    margin: 20px auto; /* Center the section with margin */
+    margin:  auto; /* Center the section with margin */
 }
 
 .team-introduction h2 {
