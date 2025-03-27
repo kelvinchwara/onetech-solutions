@@ -7,7 +7,8 @@ module.exports = merge(common, {
     mode: 'production',
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './services.html',
+
         }),
         new CopyPlugin({
             patterns: [
