@@ -1,14 +1,26 @@
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin'); // Import CopyPlugin
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js'); // Assuming you have a common config
 
 module.exports = merge(common, {
     mode: 'production',
     plugins: [
         new HtmlWebpackPlugin({
-            template: './services.html',
-
+            template: './src/index.html', // Path to your index.html template
+            filename: 'index.html', // Output filename
+            inject: 'body', // Inject scripts into the body
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/about.html', // Path to your about.html template
+            filename: 'about.html', // Output filename
+            inject: 'body', // Inject scripts into the body
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/services.html', // Path to your services.html template
+            filename: 'services.html', // Output filename
+            inject: 'body', // Inject scripts into the body
         }),
         new CopyPlugin({
             patterns: [
@@ -24,4 +36,9 @@ module.exports = merge(common, {
             ],
         }),
     ],
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'), // Output directory
+        publicPath: '/', // Public URL of the output directory when referenced in a browser
+    },
 });
