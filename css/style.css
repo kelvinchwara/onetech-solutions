@@ -52,21 +52,27 @@ nav a {
 nav a:hover {
     color: #ffcc00; /* Yellow */
 }
-    /* Hamburger Menu */
-    .hamburger {
-    display: none; /* Hide by default */
-    flex-direction: column; /* Stack lines vertically */
-    cursor: pointer; /* Change cursor to pointer */
-}
 
-    .line {
-        height: 3px; /* Height of each line */
-        width: 25px; /* Width of each line */
-        background-color: white; /* Color of the lines */
-        margin: 3px 0; /* Space between lines */
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position links absolutely */
+        top: 60px; /* Position below the nav */
+        right: 0; /* Align to the right */
+        background-color: #003366; /* Darker blue */
+        width: 100%; /* Full width */
     }
 
+    nav .nav-links.active {
+        display: flex; /* Show links when active */
+    }
 
+    .hamburger {
+        display: flex; /* Show hamburger icon on mobile */
+    }
+}
 /* Sections */
 section {
     padding: 40px 20px;
