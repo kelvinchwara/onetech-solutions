@@ -118,12 +118,16 @@
             </div>
         </form>
     </div>
+    <div class="success-message" id="successMessage">
+        Your contact details have been submitted successfully!
+    </div>
 
     <footer>
         <p>&copy; 2025 Onetech Solutions. All rights reserved.</p>
     </footer>
 
     <script>
+
         // JavaScript for the hamburger menu toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
@@ -131,6 +135,28 @@
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active'); // Toggle the 'active' class
         });
+         // Function to send message via WhatsApp
+        function sendWhatsAppMessage(event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Get the values from the form
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const subject = document.getElementById('subject').value;
+          const message = document.getElementsByName('message')[0].value;
+
+          // Construct the WhatsApp message
+          const whatsappNumber = "+254791639902"; // Your WhatsApp number
+          const whatsappMessage = `*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+          const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+          // Open the WhatsApp URL in a new tab
+          window.open(whatsappURL, '_blank');
+
+          // Show success message
+          const successMessage = document.getElementById('successMessage');
+          successMessage.style.display = 'block';
+        }
     </script>
 </body>
 

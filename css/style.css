@@ -514,3 +514,9 @@ footer p {
         max-width: 400px; /* Max width for larger screens */
     }
 }
+.success-message {
+            color: green;
+            text-align: center;
+            margin-top: 20px;
+            display: none; /* Hidden by default */
+        }
