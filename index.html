@@ -16,63 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
 
-        nav {
-            display: flex;
-            justify-content: space-between; /* Space between hamburger and links */
-            align-items: center; /* Center items vertically */
-            padding: 10px 20px;
-            background-color: #333; /* Background color for the nav */
-        }
 
-        .nav-links {
-            display: flex; /* Default display for larger screens */
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-        }
-
-        .hamburger {
-            display: none; /* Hide by default */
-            flex-direction: column; /* Stack lines vertically */
-            cursor: pointer; /* Change cursor to pointer */
-        }
-
-        .line {
-            height: 3px; /* Height of each line */
-            width: 25px; /* Width of each line */
-            background-color: white; /* Color of the lines */
-            margin: 3px 0; /* Space between lines */
-        }
-
-        /* Media query for mobile devices */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Hide links by default on mobile */
-                flex-direction: column; /* Stack links vertically */
-                position: absolute; /* Position links absolutely */
-                top: 60px; /* Position below the nav */
-                right: 0; /* Align to the right */
-                background-color: #333; /* Background color for dropdown */
-                width: 100%; /* Full width */
-            }
-
-            .nav-links.active {
-                display: flex; /* Show links when active */
-            }
-
-            .hamburger {
-                display: flex; /* Show hamburger icon on mobile */
-            }
-        }
 
         .hero {
             background: url('hero-image.jpg') no-repeat center center/cover; /* Add a background image */
@@ -150,13 +95,6 @@
             width: 80%; /* Adjust image size */
             border-radius: 10px; /* Optional: rounded corners */
             margin-bottom: 15px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
         }
 
         .social-links a {

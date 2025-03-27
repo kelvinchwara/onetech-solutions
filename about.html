@@ -57,35 +57,7 @@
         background-color: #0056b3;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        nav {
-            flex-direction: row; /* Keep nav items in a row */
-            justify-content: space-between; /* Space between items */
-        }
 
-        nav a {
-            display: none; /* Hide links by default on mobile */
-        }
-
-        .nav-links {
-            display: none; /* Hide links by default on mobile */
-            flex-direction: column; /* Stack links vertically */
-            position: absolute; /* Position links absolutely */
-            top: 60px; /* Position below the nav */
-            right: 0; /* Align to the right */
-            background-color: #003366; /* Darker blue */
-            width: 100%; /* Full width */
-        }
-
-        .nav-links.active {
-            display: flex; /* Show links when active */
-        }
-
-        .hamburger {
-            display: flex; /* Show hamburger icon on mobile */
-        }
-    }
 </style>
 
 <body>
