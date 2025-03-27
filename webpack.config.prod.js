@@ -8,17 +8,17 @@ module.exports = merge(common, {
     mode: 'production',
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html', // Path to your index.html template
+            template: './index.html', // Path to your index.html template
             filename: 'index.html', // Output filename
             inject: 'body', // Inject scripts into the body
         }),
         new HtmlWebpackPlugin({
-            template: './src/about.html', // Path to your about.html template
+            template: '.about.html', // Path to your about.html template
             filename: 'about.html', // Output filename
             inject: 'body', // Inject scripts into the body
         }),
         new HtmlWebpackPlugin({
-            template: './src/services.html', // Path to your services.html template
+            template: '.services.html', // Path to your services.html template
             filename: 'services.html', // Output filename
             inject: 'body', // Inject scripts into the body
         }),
