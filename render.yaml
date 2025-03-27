@@ -1,0 +1,10 @@
+version: "1"
+services:
+  - type: web
+    name: onetechsolutions
+    env: node
+    buildCommand: yarn install && yarn build
+    startCommand: yarn start
+    routes:
+      - src: /.*
+        dest: /index.html

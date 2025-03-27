@@ -10,6 +10,6 @@ module.exports = merge(common, {
     open: true,
     static: ['./'], // Serve static files from the current directory
     allowedHosts: 'all', // Allow all hosts to avoid "Invalid Host Header" error
-
+    port: 3000, // Optional: specify the port if needed
   },
 });
