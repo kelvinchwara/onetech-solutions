@@ -315,3 +315,78 @@ footer p {
         width: 90%; /* Full width for feature cards on small screens */
     }
 }
+/* Testimonials Section */
+.testimonials {
+    padding: 40px 20px; /* Padding for the section */
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center; /* Center text */
+    width: 100%; /* Set width to 100% */
+}
+
+/* Heading Styles */
+.testimonials h2 {
+    color: #003366; /* Dark blue for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Swiper Container */
+.swiper-container {
+    width: 100%; /* Set width to 100% */
+    max-width: 100%; /* Optional: Set a max width for the swiper */
+
+}
+
+/* Swiper Slide */
+.swiper-slide {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+
+
+
+   padding-top: 10px;
+    transition: transform 0.3s; /* Transition for hover effect */
+}
+
+.swiper-slide:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Image Styles */
+.swiper-slide img {
+    width: 100px; /* Fixed width for images */
+    height: 100px; /* Fixed height for images */
+    border-radius: 50%; /* Circular images */
+    margin-bottom: 15px; /* Space below the image */
+    object-fit: cover; /* Cover the image area */
+}
+
+/* Text Styles */
+.swiper-slide p {
+    color: #666; /* Gray color for paragraph text */
+    margin: 5px 0; /* Space above and below paragraphs */
+}
+
+.swiper-slide strong {
+    color: #003366; /* Dark blue for names */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .swiper-container {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .swiper-slide img {
+        width: 80px; /* Smaller images on mobile */
+        height: 80px; /* Smaller images on mobile */
+    }
+
+    .testimonials h2 {
+        font-size: 1.8rem; /* Adjust heading size on mobile */
+    }
+
+    .swiper-slide p {
+        font-size: 0.9rem; /* Adjust paragraph size on mobile */
+    }
+}

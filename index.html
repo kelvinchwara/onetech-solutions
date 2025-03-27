@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
 
     <style>
-
-
-
         .hero {
             background: url('hero-image.jpg') no-repeat center center/cover; /* Add a background image */
             color: #9f2828;
@@ -50,61 +47,37 @@
             background-color: darkblue;
         }
 
-/* Services Section */
-.servics {
-    display: grid; /* Use grid layout */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-    gap: 20px; /* Space between items */
-    padding: 40px 20px; /* Padding for the section */
-    max-width: 1200px; /* Max width for the section */
-    margin: auto; /* Center the section */
-}
-
-.servic {
-    background-color: #fff; /* White background for service items */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px; /* Padding inside service items */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effects */
-}
-
-.servic:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
-}
-
-.servic h3 {
-    color: #003366; /* Darker blue for headings */
-    margin-bottom: 10px; /* Space below headings */
-}
-
-.servic p {
-    color: #666; /* Gray color for paragraph text */
-}
-
-        .testimonials {
-            background-color: white;
-            padding: 40px 20px;
+        /* Services Section */
+        .servics {
+            display: grid; /* Use grid layout */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+            gap: 20px; /* Space between items */
+            padding: 40px 20px; /* Padding for the section */
+            max-width: 1200px; /* Max width for the section */
+            margin: auto; /* Center the section */
         }
 
-        .swiper-container {
-            width: 100%;
-            height: 300px; /* Adjust height as needed */
+        .servic {
+            background-color: #fff; /* White background for service items */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px; /* Padding inside service items */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effects */
         }
 
-        .swiper-slide {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .servic:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
         }
 
-        .swiper-slide img {
-            width: 80%; /* Adjust image size */
-            border-radius: 10px; /* Optional: rounded corners */
-            margin-bottom: 15px;
+        .servic h3 {
+            color: #003366; /* Darker blue for headings */
+            margin-bottom: 10px; /* Space below headings */
+        }
+
+        .servic p {
+            color: #666; /* Gray color for paragraph text */
         }
 
         .social-links a {
@@ -118,7 +91,7 @@
 <body>
     <header>
         <h1>Onetech Solutions</h1>
-       </header>
+    </header>
     <nav>
         <div class="hamburger" id="hamburger">
             <div class="line"></div>
@@ -130,13 +103,13 @@
             <a href="about.html">About Us</a>
             <a href="services.html">Services</a>
             <a href="projects.html">Projects</a>
-            <a href="team.html">Our Team</a>
+                       <a href="team.html">Our Team</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
 
     <div class="hero">
-        <h2 style="text-align: center; font-size: 25px">Welcome to Onetech Solutions</h2>
+        <h2>Welcome to Onetech Solutions</h2>
         <p>Ready to clear your worries on tech-related problems? Look no further, Onetech solutions has got you covered!</p>
         <a href="services.html" class="cta-button">Get Started</a>
     </div>
@@ -181,31 +154,36 @@
         <div class="swiper-container mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="client1.jpg" alt="">
+                    <img src="img/frank.jpg" alt="Frank's testimonial">
                     <p>Website services was fantastic! Highly recommend!</p>
                     <p><strong>John Mark</strong></p>
                 </div>
                 <div class="swiper-slide">
-                    <img src="client2.jpg" alt="">
+                    <img src="img/wesley.jpg" alt="Wesley's testimonial">
                     <p>Amazing experience with this company!</p>
                     <p><strong>James Hope</strong></p>
                 </div>
                 <div class="swiper-slide">
-                    <img src="client3.jpg" alt="">
+                    <img src="img/kevo.jpg" alt="Kevo's testimonial">
                     <p>Professional and efficient services!</p>
-                    <p><strong></strong></p>
+                    <p><strong>Kumar Jar</strong></p>
                 </div>
                 <div class="swiper-slide">
-                    <img src="client4.jpg" alt="">
+                    <img src="img/frank.jpg" alt="Frank's testimonial">
                     <p>Onetech Solutions transformed our website!</p>
                     <p><strong>Hemstone Smith</strong></p>
                 </div>
                 <div class="swiper-slide">
-                    <img src="client5.jpg" alt="">
+                    <img src="img/kevo.jpg" alt="Kevo's testimonial">
                     <p>The team is dedicated and delivers results!</p>
                     <p><strong>Jude Joy</strong></p>
                 </div>
             </div>
+            <!-- Remove Pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <!-- Remove Navigation -->
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
         </div>
     </section>
 
@@ -221,23 +199,41 @@
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        let swiper = new Swiper(".mySwiper", {
-            autoplay: {
-                delay: 5000, // 5 seconds
-                disableOnInteraction: false,
-            },
-            loop: true, // Loop through testimonials
-        });
+<script>
+    // Initialize Swiper
+    let swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1, // Show one slide at a time
+        spaceBetween: 30, // Space between slides
+        autoplay: {
+            delay: 4000, // 5 seconds
+            disableOnInteraction: false, // Continue autoplay after interaction
+        },
+        loop: true, // Loop through testimonials
+    });
 
-        // Hamburger menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
+    // Optional: Hide pagination and navigation elements
+    const pagination = document.querySelector('.swiper-pagination');
+    const nextButton = document.querySelector('.swiper-button-next');
+    const prevButton = document.querySelector('.swiper-button-prev');
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active'); // Toggle the 'active' class
-        });
-    </script>
+    if (pagination) {
+        pagination.style.display = 'none'; // Hide pagination dots
+    }
+    if (nextButton) {
+        nextButton.style.display = 'none'; // Hide next button
+    }
+    if (prevButton) {
+        prevButton.style.display = 'none'; // Hide previous button
+    }
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active'); // Toggle the 'active' class
+    });
+</script>
 </body>
 
 </html>
