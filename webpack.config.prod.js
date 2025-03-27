@@ -1,41 +1,40 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin'); // Import CopyPlugin
 const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js'); // Assuming you have a common config
+const common = require('./webpack.common.js');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(common, {
     mode: 'production',
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html', // Path to your index.html template
-            filename: 'index.html', // Output filename
-            inject: 'body', // Inject scripts into the body
+            template: './index.html',
+
+
         }),
-        new HtmlWebpackPlugin({
-            template: '.about.html', // Path to your about.html template
-            filename: 'about.html', // Output filename
-            inject: 'body', // Inject scripts into the body
+      new HtmlWebpackPlugin({
+            template: './about.html',
+
+
         }),
-        new HtmlWebpackPlugin({
-            template: '.services.html', // Path to your services.html template
-            filename: 'services.html', // Output filename
-            inject: 'body', // Inject scripts into the body
+      new HtmlWebpackPlugin({
+            template: './services.html',
+
+
         }),
-       new HtmlWebpackPlugin({
-            template: '.projects.html', // Path to your services.html template
-            filename: 'projects.html', // Output filename
-            inject: 'body', // Inject scripts into the body
+      new HtmlWebpackPlugin({
+            template: './projects.html',
+
+
         }),
-       new HtmlWebpackPlugin({
-            template: '.team.html', // Path to your services.html template
-            filename: 'team.html', // Output filename
-            inject: 'body', // Inject scripts into the body
+      new HtmlWebpackPlugin({
+            template: './team.html',
+
+
         }),
-       new HtmlWebpackPlugin({
-            template: '.contact.html', // Path to your services.html template
-            filename: 'contact.html', // Output filename
-            inject: 'body', // Inject scripts into the body
+      new HtmlWebpackPlugin({
+            template: './contact.html',
+
+
         }),
         new CopyPlugin({
             patterns: [
@@ -51,9 +50,4 @@ module.exports = merge(common, {
             ],
         }),
     ],
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'), // Output directory
-        publicPath: '/', // Public URL of the output directory when referenced in a browser
-    },
 });
