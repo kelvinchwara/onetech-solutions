@@ -22,7 +22,7 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
 </head>
-    <style>
+   <style>
         .service-container {
             max-width: 800px;
             margin: auto;
@@ -32,19 +32,87 @@
             padding: 20px;
             margin-top: 40px;
         }
+
         .service {
             margin-bottom: 20px;
             border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
+            padding: 15px; /* Padding for the service card */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
         }
+
+        /* Unique hover effects for each service card */
+        .service:nth-child(1):hover {
+            background-color: #e6f7ff; /* Light blue */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+        }
+
+        .service:nth-child(2):hover {
+            background-color: #fff3e6; /* Light orange */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service:nth-child(3):hover {
+            background-color: #e6ffe6; /* Light green */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service:nth-child(4):hover {
+            background-color: #fff0f6; /* Light pink */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service:nth-child(5):hover {
+            background-color: #f0e6ff; /* Light purple */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service:nth-child(6):hover {
+            background-color: #e6e6ff; /* Light lavender */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .service:nth-child(7):hover {
+            background-color: #fff7e6; /* Light peach */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service:nth-child(8):hover {
+            background-color: #e6f0ff; /* Light sky blue */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service:nth-child(9):hover {
+            background-color: #f6e6ff; /* Light violet */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service:nth-child(10):hover {
+            background-color: #e6ffe6; /* Light mint */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service:nth-child(11):hover {
+            background-color: #fff3e6; /* Light coral */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service:nth-child(12):hover {
+            background-color: #e6f7ff; /* Light cyan */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .
+
         .service h3 {
             margin: 0;
         }
+
         .service-details {
             display: none;
             margin-top: 10px;
             color: #555;
         }
+
         .read-more {
             background-color: #007BFF;
             color: white;
@@ -54,8 +122,9 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
         .read-more:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Darker blue on hover */
         }
     </style>
 

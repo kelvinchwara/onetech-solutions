@@ -48,37 +48,76 @@
         }
 
         /* Services Section */
-        .servics {
-            display: grid; /* Use grid layout */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-            gap: 20px; /* Space between items */
-            padding: 40px 20px; /* Padding for the section */
-            max-width: 1200px; /* Max width for the section */
-            margin: auto; /* Center the section */
-        }
+/* Services Section Styles */
+.servics {
+    display: grid; /* Utilize a grid layout for responsive design */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create responsive columns that adapt to screen size */
+    gap: 20px; /* Space between individual service items */
+    padding: 40px 20px; /* Padding around the section */
+    max-width: 1200px; /* Set a maximum width for the section */
+    margin: auto; /* Center the section horizontally */
+}
 
-        .servic {
-            background-color: #fff; /* White background for service items */
-            border: 1px solid #ddd; /* Light border */
-            border-radius: 5px; /* Rounded corners */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            padding: 20px; /* Padding inside service items */
-            transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effects */
-        }
+/* Individual Service Item Styles */
+.servic {
+    background-color: #ffffff; /* Set a white background for service items */
+    border: 1px solid #ddd; /* Add a light border around each item */
+    border-radius: 5px; /* Apply rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    padding: 20px; /* Internal padding for content spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
 
-        .servic:hover {
-            transform: translateY(-5px); /* Lift effect on hover */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
-        }
+/* Hover Effects for Service Items */
+.servic:hover {
+    transform: translateY(-5px); /* Lift the item slightly on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Increase shadow depth on hover */
+}
 
-        .servic h3 {
-            color: #003366; /* Darker blue for headings */
-            margin-bottom: 10px; /* Space below headings */
-        }
+/* Unique Hover Effects for Each Card */
+.servic:nth-child(1):hover {
+    background-color: #e6f7ff; /* Light blue */
+}
 
-        .servic p {
-            color: #666; /* Gray color for paragraph text */
-        }
+.servic:nth-child(2):hover {
+    background-color: #fff3e6; /* Light orange */
+}
+
+.servic:nth-child(3):hover {
+    background-color: #e6ffe6; /* Light green */
+}
+
+.servic:nth-child(4):hover {
+    background-color: #fff0f6; /* Light pink */
+}
+
+.servic:nth-child(5):hover {
+    background-color: #f0e6ff; /* Light purple */
+}
+
+.servic:nth-child(6):hover {
+    background-color: #e6e6ff; /* Light lavender */
+}
+
+.servic:nth-child(7):hover {
+    background-color: #fff7e6; /* Light peach */
+}
+
+.servic:nth-child(8):hover {
+    background-color: #e6f0ff; /* Light sky blue */
+}
+
+/* Heading Styles within Service Items */
+.servic h3 {
+    color: #003366; /* Dark blue color for headings */
+    margin-bottom: 10px; /* Space below headings for separation */
+}
+
+/* Paragraph Styles within Service Items */
+.servic p {
+    color: #666666; /* Gray color for paragraph text */
+    margin: 0; /* Remove default margin for paragraphs */
+}
 
         .social-links a {
             color: white;
@@ -176,7 +215,7 @@
                 <div class="swiper-slide">
                     <img src="img/kevo.jpg" alt="Kevo's testimonial">
                     <p>The team is dedicated and delivers results!</p>
-                    <p><strong>Jude Joy</strong></p>
+                    <p><strong>Kumar Sihg</strong></p>
                 </div>
             </div>
             <!-- Remove Pagination -->
