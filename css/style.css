@@ -22,15 +22,10 @@ header h1 {
     letter-spacing: 1px;
 }
 
-header p {
-    font-size: 1.2em;
-    margin: 5px 0 15px;
-}
-
 /* Navigation */
 nav {
     display: flex;
-    justify-content: center; /* Center the nav items */
+    justify-content: space-between; /* Space between hamburger and links */
     align-items: center; /* Center items vertically */
     background-color: #003366; /* Darker blue */
     padding: 10px 20px;
@@ -53,6 +48,20 @@ nav a:hover {
     color: #ffcc00; /* Yellow */
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hide by default */
+    flex-direction: column; /* Stack lines vertically */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.line {
+    height: 3px; /* Height of each line */
+    width: 25px; /* Width of each line */
+    background-color: white; /* Color of the lines */
+    margin: 3px 0; /* Space between lines */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     nav .nav-links {
@@ -73,6 +82,7 @@ nav a:hover {
         display: flex; /* Show hamburger icon on mobile */
     }
 }
+
 /* Sections */
 section {
     padding: 40px 20px;
@@ -170,7 +180,7 @@ h2 {
 }
 
 .contact-details a:hover {
-        color: #0056b3; /* Darker blue */
+    color: #0056b3; /* Darker blue */
 }
 
 /* Service Section */
@@ -194,62 +204,6 @@ footer {
 footer p {
     margin: 0;
     font-size: 0.9em;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    nav {
-        flex-direction: row; /* Keep nav items in a row */
-        justify-content: space-between; /* Space between items */
-    }
-
-    nav a {
-        margin: 0 10px;
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger icon on mobile */
-    }
-
-    .nav-links {
-        display: none; /* Hide links by default on mobile */
-        flex-direction: column; /* Stack links vertically */
-        position: absolute; /* Position links absolutely */
-        top: 60px; /* Position below the nav */
-        right: 0; /* Align to the right */
-        background-color: #003366; /* Darker blue */
-        width: 100%; /* Full width */
-    }
-
-    .nav-links.active {
-        display: flex; /* Show links when active */
-    }
-}
-
-@media (max-width: 480px) {
-    header p {
-        font-size: 1em;
-    }
-
-    nav {
-        flex-direction: column; /* Stack nav items vertically */
-    }
-
-    nav a {
-        margin: 5px 0;
-    }
-
-    .team-member {
-        width: 100%; /* Full width for team members on small screens */
-    }
-
-    .service-item {
-        width: 100%; /* Full width for service items on small screens */
-    }
 }
 
 /* Hero Section */
@@ -335,4 +289,28 @@ footer p {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+}
+
+/* Additional Styles for Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 0 50px; /* Adjust padding for smaller screens */
+    }
+
+    .team-container {
+        flex-direction: column; /* Stack team members vertically on small screens */
+        align-items: center; /* Center team members */
+    }
+
+    .team-member {
+        width: 90%; /* Full width for team members on small screens */
+    }
+
+    .service-item {
+        width: 90%; /* Full width for service items on small screens */
+    }
+
+    .feature-card {
+        width: 90%; /* Full width for feature cards on small screens */
+    }
 }
