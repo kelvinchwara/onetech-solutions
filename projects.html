@@ -1,114 +1,213 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Onetech Solutions | Innovative Tech Services</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-  <link rel ="stylesheet" href="css/style.css">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
-</head>
-<style>
-  .service-section {
-            margin-bottom: 40px;
-            text-align: left; /* Align text to the left for project details */
-            max-width: 800px; /* Set a max width for the project sections */
-            margin-left: auto; /* Center the section */
-            margin-right: auto; /* Center the section */
-        }
-
-        .project {
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Onetech Solutions | Projects</title>
+    <meta name="description" content="Showcasing projects by Onetech Solutions, including web design, SEO, and more.">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+    <style>
+        /* Base Styles */
+        body {
+            margin: 10px 10px 0 0; /* 10px top and right margin */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #d3dce4;
+            color: #000000;
             display: flex;
-            margin-bottom: 20px;
-            align-items: center; /* Center items vertically */
+
+        }
+        header {
+            background-color: #fff;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #3939a5;
+            padding: 6px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .project img {
-            width: 200px;
-            height: auto;
-            margin-right: 20px;
+        .header-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+
+            align-items: center; /* Center icon and text vertically */
         }
 
-        .project-content {
-            max-width: 600px;
+        .header-title i {
+            margin-right: 70px; /* Space between icon and title */
+            font-size: 1.5rem; /* Icon size */
         }
 
-        .project-content h3 {
+        /* Main Content Area */
+        .main-area {
+            display: flex;
+            margin-top: 80px; /* Space for fixed header */
+            max-width: 1200px;
+            margin: 80px auto 0;
+            flex-grow: 1;
+        }
+
+        /* Sidebar Navigation Styles */
+        .sidenav {
+            width: 220px;
+            background-color: #3939a5;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            padding-top: 30px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidenav ul {
+            list-style: none;
+            padding: 0;
             margin: 0;
         }
 
-        .project-content p {
-            margin: 10px 0;
-        }
-
-        .view-more {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: darkblue;
-            color: white;
+        .sidenav li a {
+            display: block;
+            padding: 5px 5px;
             text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s;
         }
 
-        .view-more:hover {
-            background-color: darkblue;
+         .sidenav li a:hover {
+            background-color: #f8f9fa;
+            color: #007bff;
         }
 
-</style>
+        .sidenav li a.active {
+            background-color: #5d5dd1;
+            font-weight: bold;
+        }
 
+        /* Main Content Styles */
+        .main-content {
+            background-color: #fff;
+            padding: 30px;
+            margin-left: 240px; /* Space for sidebar */
+            flex-grow: 1;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
+        .main-content h1, .main-content h2, .main-content h3 {
+            color: #3939a5;
+            margin-top: 0;
+        }
+        /* Project Card Styles */
+        .project-card {
+            background-color: #e8f5e9; /* Light green */
+            padding: 20px;            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h2 {
+            font-size: 1.5rem;
+            color: #3939a5;
+            margin: 0 0 10px;
+        }
+
+        .project-card p {
+            color: #555;
+            margin: 0 0 15px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            background-color: #3939a5;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .project-card a:hover {
+            background-color: #5d5dd1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .sidenav {
+                width: 180px;
+            }
+            .main-content {
+                margin-left: 190px; /* Adjusted for 10px space */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidenav {
+                width: 150px;
+            }
+            .main-content {
+                margin-left: 160px; /* Adjusted for 10px space */
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .sidenav {
+                width: 100px;
+            }
+            .main-content {
+                margin-left: 110px; /* Adjusted for 10px space */
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
 <body>
-
-
     <header>
-        <h1>Onetech Solutions</h1>
-       </header>
-    <nav>
-        <div class="hamburger" id="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+        <div class="header-title">
+            <i class=""><img src="icon.png"  style="height: 40px; width: 40px; border-radius: 50%" alt=""></i> <!-- Icon added here -->
+            ONETECH SOLUTIONS
         </div>
-        <div class="nav-links" id="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="projects.html">Projects</a>
-            <a href="team.html">Our Team</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
-    <h1 style="text-align: center">Our Projects</h1>
+    </header>
 
-        <!-- User Experience (UX) Design Projects -->
-<h1 style="color: #007BFF; text-align: center; margin: 15%">Oops! Coming Soon</h1>
+    <div class="main-area">
+       <nav class="sidenav">
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="starter.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
 
-    <footer> <p>&copy; 2025 Onetech Solutions. All rights reserved.</p> </footer>
-<script>
-        // JavaScript for the hamburger menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
+       <h1 style="text-align: center; font-size: 50px">Oops ! Coming soon</h1>
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active'); // Toggle the 'active' class
-        });
-    </script>
+
+            <!-- Add more project cards as needed -->
+        </main>
+    </div>
 </body>
-
 </html>
-
