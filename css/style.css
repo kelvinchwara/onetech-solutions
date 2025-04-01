@@ -140,7 +140,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .sidenav {
-                width: 80px;
+                width: 100px;
             }
             .main-content {
                 margin-left: 120px; /* Adjusted for smaller sidebar */
@@ -149,7 +149,7 @@
 
         @media (max-width: 576px) {
             .sidenav {
-                width: 80px;
+                width: 100px;
             }
             .main-content {
                 margin-left: 100px; /* Adjusted for smaller sidebar */
