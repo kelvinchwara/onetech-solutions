@@ -1,35 +1,483 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onetech Solutions | Innovative Tech Services</title>
     <meta name="description" content="Onetech Solutions offers innovative tech services including UX design, SEO, content creation, and more.">
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Placeholder image for icon, as local files aren't directly accessible in this environment -->
+    <link rel="icon" href="https://placehold.co/16x16/3939a5/FFFFFF?text=OS" sizes="any">
+    <link rel="icon" href="https://placehold.co/32x32/3939a5/FFFFFF?text=OS" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://placehold.co/180x180/3939a5/FFFFFF?text=OS">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        
+        /* General Body Styles */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font */
+            margin: 0;
+            background-color: #f4f6f8; /* Light gray background */
+            color: #333;
+            line-height: 1.6;
+        }
 
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            color: #3939a5; /* Primary Blue */
+            padding: 6px 20px; /* Added horizontal padding */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space out title and hamburger */
+        }
 
-      
+        .header-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center; /* Center icon and text vertically */
+        }
+
+        .header-title img { /* Specific style for the image within header-title */
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Hamburger Icon for Mobile */
+        .hamburger-menu {
+            display: none; /* Hidden by default, shown on small screens */
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            z-index: 1100; /* Above header */
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #3939a5;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hamburger Animation */
+        .hamburger-menu.open span:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        .hamburger-menu.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.open span:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+
+        /* Main Content Area */
+        .main-area {
+            display: flex;
+            margin-top: 70px; /* Space below header */
+            flex-grow: 1;
+        }
+
+        /* Sidebar Navigation Styles */
+        .sidenav {
+            width: 200px;
+            background-color: #3939a5; /* Primary Blue */
+            position: fixed;
+            top: 70px;
+            left: 0;
+            bottom: 0; /* Full height */
+            overflow-y: auto;
+            transition: transform 0.3s ease-in-out; /* For mobile slide-in */
+            z-index: 999; /* Below header, above main content */
+        }
+
+        .sidenav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidenav li a {
+            display: block;
+            padding: 15px 20px; /* Increased padding for better touch targets */
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 8px; /* Rounded corners */
+            margin: 5px 10px; /* Spacing between items */
+        }
+
+        .sidenav li a:hover {
+            background-color: #f8f9fa;
+            color: #3939a5; /* Primary Blue */
+        }
+
+        .sidenav li a.active {
+            background-color: #303080; /* Slightly darker blue for active */
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            margin-left: 220px; /* Space for the fixed sidebar + padding */
+            padding: 20px;
+            flex-grow: 1;
+            width: calc(100% - 220px); /* Adjust width for sidebar */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #3939a5, #6a5acd); /* Gradient background */
+            color: #fff;
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 15px; /* Rounded corners */
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden; /* For animations */
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+        }
+
+        .cta-button-hero {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ffc107; /* Amber/Yellow */
+            color: #333;
+            text-decoration: none;
+            border-radius: 50px; /* Pill shape */
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button-hero:hover {
+            background-color: #e0a800; /* Darker yellow on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button-hero.transparent {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .cta-button-hero.transparent:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        /* Mission & Vision Section */
+        .mission-vision-section {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap; /* Allow cards to wrap */
+        }
+
+        .mission-card, .vision-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px; /* Minimum width for cards */
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-card h3, .vision-card h3 {
+            color: #3939a5;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .mission-card p, .vision-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Services Overview Section */
+        .services-overview-section {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .services-overview-section h2 {
+            color: #3939a5;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .service-item {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item span {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .service-item h4 {
+            color: #3939a5;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-button-final {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #3939a5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button-final:hover {
+            background-color: #303080;
+            transform: translateY(-2px);
+        }
+
+        .cta-button-final.transparent {
+            background-color: transparent;
+            border: 2px solid #3939a5;
+            color: #3939a5;
+        }
+
+        .cta-button-final.transparent:hover {
+            background-color: #3939a5;
+            color: #fff;
+        }
+
+        /* Call to Action Final Section */
+        .call-to-action-final {
+            background-color: #e0f7fa; /* Light blue */
+            padding: 50px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .call-to-action-final h2 {
+            color: #3939a5;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .call-to-action-final p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.3s; /* Delay for paragraph */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* Header adjustments */
+            header {
+                padding: 10px 15px;
+            }
+
+            .header-title {
+                font-size: 1.1rem;
+            }
+
+            .header-title img {
+                height: 35px;
+                width: 35px;
+            }
+
+            /* Show hamburger menu */
+            .hamburger-menu {
+                display: flex;
+            }
+
+            /* Hide sidebar by default on small screens */
+            .sidenav {
+                transform: translateX(-100%); /* Off-screen by default */
+                width: 250px; /* Wider for mobile */
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            }
+
+            /* When mobile menu is open */
+            .sidenav.open {
+                transform: translateX(0); /* Slide in */
+            }
+
+            /* Adjust main content margin for mobile */
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 15px;
+            }
+
+            /* Hero Section adjustments */
+            .hero-section {
+                padding: 40px 20px;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column; /* Stack buttons vertically */
+                gap: 15px;
+            }
+
+            /* Mission & Vision cards */
+            .mission-card, .vision-card {
+                min-width: unset; /* Remove min-width for better stacking */
+                width: 100%; /* Full width on small screens */
+                margin-bottom: 20px; /* Add space between stacked cards */
+            }
+
+            /* Services grid */
+            .services-grid {
+                grid-template-columns: 1fr; /* Single column */
+            }
+
+            .services-overview-section h2,
+            .call-to-action-final h2 {
+                font-size: 1.8rem;
+            }
+
+            .call-to-action-final {
+                padding: 30px;
+            }
+        }
     </style>
 </head>
 <body>
-     <header>
+    <header>
         <div class="header-title">
             <img src="https://placehold.co/40x40/3939a5/FFFFFF?text=OS" style="height: 40px; width: 40px; border-radius: 50%" alt="Onetech Solutions Logo">
             ONETECH SOLUTIONS
         </div>
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
     <div class="main-area">
-        <nav class="sidenav">
+        <nav class="sidenav" id="mySidenav">
             <ul>
                 <li><a href="#" class="active">Dashboard</a></li>
                 <li><a href="index.html">Home</a></li>
@@ -40,6 +488,7 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
+
          <main class="main-content">
             <h1 style="text-align: center; font-size: 2.5rem; font-weight: bold; margin-bottom: 30px; color: #3939a5;">Our Projects</h1>
             
@@ -190,21 +639,25 @@
             </section>
         </main>
     </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const serviceCards = document.querySelectorAll('.service-card');
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const sidenav = document.getElementById('mySidenav');
 
-            serviceCards.forEach(card => {
-                const readMoreBtn = card.querySelector('.read-more-btn');
-                const fullDetails = card.querySelector('.full-details');
+            // Toggle sidebar and hamburger icon state
+            hamburgerMenu.addEventListener('click', function () {
+                sidenav.classList.toggle('open');
+                hamburgerMenu.classList.toggle('open');
+            });
 
-                readMoreBtn.addEventListener('click', function() {
-                    if (fullDetails.style.display === 'block') {
-                        fullDetails.style.display = 'none';
-                        readMoreBtn.textContent = 'Read More';
-                    } else {
-                        fullDetails.style.display = 'block';
-                        readMoreBtn.textContent = 'Read Less';
+            // Close sidebar when a navigation link is clicked (optional, but good for UX)
+            const navLinks = sidenav.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 768) { // Only close on small screens
+                        sidenav.classList.remove('open');
+                        hamburgerMenu.classList.remove('open');
                     }
                 });
             });
