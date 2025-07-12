@@ -10,262 +10,21 @@
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
-
-  <style>
-        /* Base Styles */
-        body {
-            margin: 10px 10px 0 0; /* 10px top and right margin */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #d3dce4;
-            color: #000000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        /* Header Styles */
-        /* Header Styles */
-        header {
-            background-color: #fff;
-            color: #3939a5;
-            padding: 6px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .header-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            display: flex;
-
-            align-items: center; /* Center icon and text vertically */
-        }
-
-        .header-title i {
-            margin-right: 70px; /* Space between icon and title */
-            font-size: 1.5rem; /* Icon size */
-        }
-
-        /* Main Content Area */
-        .main-area {
-            display: flex;
-            margin-top: 70px; /* Space below header */
-            flex-grow: 1;
-        }
-
-        /* Sidebar Navigation Styles */
-        .sidenav {
-            width: 220px;
-            background-color: #3939a5;
-            position: fixed;
-            top: 60px;
-            left: 0;
-            bottom: 0; /* Full height */
-            overflow-y: auto;
-            padding-top: 20px;
-            border-right: 1px solid #dee2e6;
-        }
-
-        .sidenav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-     .sidenav li a {
-            display: block;
-            padding: 5px 5px;
-            text-decoration: none;
-            color: #fff;
-            transition: background-color 0.3s;
-        }
-
-          .sidenav li a:hover {
-            background-color: #f8f9fa;
-            color: #007bff;
-        }
-
-        .sidenav li a.active {
-            background-color: #5d5dd1;
-            color: #fff;
-            font-weight: 500;
-        }
-
-        /* Main Content Styles */
-        .main-content {
-            flex-grow: 1;
-            background-color: #fff;
-            padding: 20px;
-            margin-left: 230px; /* Space from the sidebar */
-            margin-right: 10px; /* Space to the right */
-            margin-top: 10px; /* Space from the header */
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-
-        /* Section Styles */
-        .company-overview, .mission-vision, .values-history, .team-introduction {
-            padding: 20px;
-            margin-bottom: 20px;
-                        border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .company-overview {
-            background-color: #e3f2fd; /* Light blue */
-        }
-
-        .mission-vision {
-            background-color: #f3e5f5; /* Light purple */
-        }
-
-        .values-history {
-            background-color: #fff3e0; /* Light orange */
-        }
-
-        .team-introduction {
-            background-color: #e8f5e9; /* Light green */
-        }
-
-        .company-overview:hover, .mission-vision:hover, .values-history:hover, .team-introduction:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Contact Us Form Styles */
-        .contact-form {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba 1, 0, 0, 0.1);
-        }
-
-        .contact-form h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #3939a5;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #3939a5;
-            outline: none;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .submit-button {
-            background-color: #3939a5;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-button:hover {
-            background-color: #5d5dd1;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .sidenav {
-                width: 180px;
-            }
-            .main-content {
-                margin-left: 190px; /* Adjusted for 10px space */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .sidenav {
-                width: 150px;
-                top: 50px;
-                bottom: 0;
-            }
-            .main-content {
-                margin-left: 160px; /* Adjusted for 10px space */
-                padding-top: 70px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .sidenav {
-                width: 100px;
-                top: 60px;
-                bottom: 0;
-                position: fixed;
-                overflow-y: auto;
-            }
-            .sidenav ul {
-                display: block;
-                padding: 0;
-            }
-            .sidenav li {
-                margin-right: 0;
-            }
-            .sidenav li a {
-                font-size: 0.8rem;
-                padding: 8px 10px;
-                display: block;
-            }
-            .main-content {
-                margin-left: 110px; /* Adjusted for 10px space */
-                padding-top: 60px;
-                padding: 10px;
-            }
-            .contact-form {
-                padding: 15px;
-            }
-        }
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+    
+    <style>
+       
+       
+       
     </style>
 </head>
 <body>
     <header>
         <div class="header-title">
-            <i class=""><img src="icon.png"  style="height: 40px; width: 40px; border-radius: 50%" alt=""></i> <!-- Icon added here -->
+            <img src="https://placehold.co/40x40/3939a5/FFFFFF?text=OS" style="height: 40px; width: 40px; border-radius: 50%" alt="Onetech Solutions Logo">
             ONETECH SOLUTIONS
         </div>
-
     </header>
 
     <div class="main-area">
@@ -275,32 +34,87 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="project.html">Projects</a></li>
                 <li><a href="team.html">Our Team</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
 
-        <main class="main-content">
-            <div class="contact-form">
-                <h2>Contact Us</h2>
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+         <main class="main-content">
+            <h1 style="text-align: center; font-size: 2.5rem; font-weight: bold; margin-bottom: 30px; color: #3939a5;">Our Projects</h1>
+            
+            <div class="contact-container">
+                <div class="contact-info-section">
+                    <h3>Get in Touch</h3>
+                    <ul class="contact-details-list">
+                        <li><i class="icon fas fa-map-marker-alt"></i> <span>123 Tech Avenue, Innovation City, Kenya</span></li>
+                        <li><i class="icon fas fa-phone"></i> <span>Phone: <a href="tel:+254791639902">+254 791 639902</a></span></li>
+                        <li><i class="icon fas fa-envelope"></i> <span>Email: <a href="mailto:info@onetechsolutions.com">info@onetechsolutions.com</a></span></li>
+                        <li><i class="icon fas fa-clock"></i> <span>Mon - Fri: 9:00 AM - 5:00 PM</span></li>
+                    </ul>
+                    <div class="map-placeholder">
+                        <!-- Placeholder for a Google Map iframe or an image -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.083321558223!2d34.76451625!3d-0.67878365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182b3d32b5e2d67d%3A0x8f2a9d8c9f0c2b1e!2sKisii%20Town!5e0!3m2!1sen!2ske!4v1720739909249!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <div class="form-group">
-                        <label for ="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+                </div>
+
+                <div class="contact-form-section">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service of Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="User Experience (UX) Design">User Experience (UX) Design</option>
+                                <option value="Search Engine Optimization (SEO)">Search Engine Optimization (SEO)</option>
+                                <option value="Content Creation and Marketing">Content Creation and Marketing</option>
+                                <option value="E-commerce Solutions">E-commerce Solutions</option>
+                                <option value="Social Media Management">Social Media Management</option>
+                                <option value="Branding and Identity Development">Branding and Identity Development</option>
+                                <option value="Website Maintenance and Support">Website Maintenance and Support</option>
+                                <option value="Analytics and Reporting">Analytics and Reporting</option>
+                                <option value="Mobile App Development">Mobile App Development</option>
+                                <option value="Consultation Services">Consultation Services</option>
+                                <option value="Training and Workshops">Training and Workshops</option>
+                                <option value="Accessibility Services">Accessibility Services</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
             </div>
         </main>
     </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
+            const whatsappUrl = `https://wa.me/254791639902?text=${whatsappMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
 </body>
 </html>

@@ -3,244 +3,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Onetech Solutions | Innovative Tech Services</title>
-    <meta name="description" content="Onetech Solutions offers innovative tech services including UX design, SEO, content creation, and more.">
+    <title>Onetech Solutions | Our Team</title>
+    <meta name="description" content="Meet the skilled team at Onetech Solutions, experts in web development, UX design, and more.">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
-  <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        
 
-  <style>
-        /* Base Styles */
-        body {
-            margin: 10px 10px 0 0; /* 10px top and right margin */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #d3dce4;
-            color: #000000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-       /* Header Styles */
-        header {
-            background-color: #fff;
-            color: #3939a5;
-            padding: 6px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .header-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            display: flex;
-
-            align-items: center; /* Center icon and text vertically */
-        }
-
-        .header-title i {
-            margin-right: 70px; /* Space between icon and title */
-            font-size: 1.5rem; /* Icon size */
-        }
-
-        /* Main Content Area */
-        .main-area {
-            display: flex;
-            margin-top: 70px; /* Space below header */
-            flex-grow: 1;
-        }
-
-        /* Sidebar Navigation Styles */
-        .sidenav {
-            width: 220px;
-            background-color: #3939a5;
-            position: fixed;
-            top: 60px;
-            left: 0;
-            bottom: 0; /* Full height */
-            overflow-y: auto;
-            padding-top: 20px;
-            border-right: 1px solid #dee2e6;
-        }
-
-        .sidenav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidenav li a {
-            display: block;
-            padding: 5px 5px;
-            text-decoration: none;
-            color: #fff;
-            transition: background-color 0.3s;
-        }
-
-          .sidenav li a:hover {
-            background-color: #f8f9fa;
-            color: #007bff;
-        }
-
-        .sidenav li a.active {
-            background-color: #5d5dd1;
-            color: #fff;
-            font-weight: 500;
-        }
-
-        /* Main Content Styles */
-        .main-content {
-            flex-grow: 1;
-            background-color: #fff;
-            padding: 20px;
-            margin-left: 230px; /* Space from the sidebar */
-            margin-right: 10px; /* Space to the right */
-            margin-top: 10px; /* Space from the header */
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-
-        /* Team Introduction Section */
-        .team-introduction {
-            background-color: #e8f5e9; /* Light green */
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .team-introduction:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .team-introduction h2 {
-            text-align: center;
-            font-size: 25px;
-            color: #3939a5;
-        }
-
-        .team-introduction p {
-            color: #333;
-        }
-
-        /* Team Container */
-        .team-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        /* Team Member Card */
-        .team-member {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px; /* Fixed width for larger screens */
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .team-member img {
-            width: 100px; /* Default size for images */
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        .team-member h2 {
-            font-size: 1.5rem;
-            color: #3939a5;
-        }
-
-        .team-member p {
-            color: #555;
-        }
-
-        .contact-details {
-            margin-top: 15px;
-        }
-
-        .contact-details h3 {
-            font-size: 1rem;
-            color: #333;
-        }
-
-        .contact-details a {
-            color: #3939a5;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-details a:hover {
-            color: #5d5dd1;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .sidenav {
-                width: 180px;
-            }
-            .main-content {
-                margin-left: 190px; /* Adjusted for 10px space */
-            }
-            .team-member {
-                width: 45%; /* Two members per row on medium screens */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .sidenav {
-                width: 150px;
-            }
-            .main-content {
-                margin-left: 160px; /* Adjusted for 10px space */
-                padding: 15px;
-            }
-            .team-member {
-                width: 100%; /* Full width for smaller screens */
-            }
-        }
-
-        @media (max-width: 576px) {
-            .sidenav {
-                width: 100px;
-            }
-            .main-content {
-                margin-left: 110px; /* Adjusted for 10px space */
-                padding: 10px;
-            }
-            .team-member img {
-                width: 80px; /* Smaller image size for mobile */
-                height: 80px;
-            }
-        }
+      
+       
     </style>
 </head>
 <body>
     <header>
         <div class="header-title">
-            <i class=""><img src="icon.png"  style="height: 40px; width: 40px; border-radius: 50%" alt=""></i> <!-- Icon added here -->
+            <img src="https://placehold.co/40x40/3939a5/FFFFFF?text=OS" style="height: 40px; width: 40px; border-radius: 50%" alt="Onetech Solutions Logo">
             ONETECH SOLUTIONS
         </div>
     </header>
@@ -252,57 +34,139 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="project.html">Projects</a></li>
                 <li><a href="team.html">Our Team</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-
         <main class="main-content">
+            <h1 style="text-align: center; font-size: 2.5rem; font-weight: bold; margin-bottom: 30px; color: #3939a5;">Our Projects</h1>
+            
             <div class="team-introduction">
                 <h2>Meet Our Skilled Team</h2>
-                <p>At OneTech Solutions, we take great pride in our diverse and talented team of professionals. Each member is an expert in their respective field,                bringing a unique blend of skills, experiences, and perspectives that contribute to our collective success. Together, we are dedicated to delivering high-quality solutions that exceed our clients' expectations.</p>
+                <p>At OneTech Solutions, we take great pride in our diverse and talented team of professionals. Each member is an expert in their respective field, bringing a unique blend of skills, experiences, and perspectives that contribute to our collective success. Together, we are dedicated to delivering high-quality solutions that exceed our clients' expectations.</p>
                 <h3>Our Areas of Expertise</h3>
                 <ul>
-                    <li><strong>Programming Languages:</strong> JavaScript, Python, PHP, C#, Java</li>
-                    <li><strong>Web Development:</strong> React, Angular, Node.js, Django frameworks</li>
-                    <li><strong>Design and User Experience:</strong> Intuitive interfaces and engaging user experiences</li>
-                    <li><strong>Collaboration and Communication:</strong> Effective communication for successful project delivery</li>
+                    <li><span class="skill-icon">💻</span> Programming Languages: JavaScript, Python, PHP, C#, Java</li>
+                    <li><span class="skill-icon">🌐</span> Web Development: React, Angular, Node.js, Django frameworks</li>
+                    <li><span class="skill-icon">🎨</span> Design and User Experience: Intuitive interfaces and engaging user experiences</li>
+                    <li><span class="skill-icon">🤝</span> Collaboration and Communication: Effective communication for successful project delivery</li>
                 </ul>
                 <p>Together, we are committed to pushing the boundaries of technology and delivering innovative solutions that drive success for our clients. We invite you to get to know our team below and see how our collective expertise can help you achieve your goals!</p>
             </div>
 
-            <div class="team-container">
-                <div class="team-member">
-                    <img src="img/kevo.jpg" alt="Kelvin Chwara Sagini">
-                    <h2>KELVIN CHWARA SAGINI</h2>
-                    <p>FullStack Web Developer. Proficient with React, Django, Node.js Frameworks</p>
-                    <div class="contact-details">
-                        <h3>Email: <a href="mailto:kelvi20sagini@gmail.com">kelvi20sagini@gmail.com</a></h3>
-                        <h3>Tel: <a href="tel:+254762132827">+254762132827</a></h3>
-                        <h3>WhatsApp: <a href="https://wa.me/+254762132827">+254762132827</a></h3>
+            <div class="team-member-grid">
+                <!-- Team Member 1: Kelvin Chwara Sagini -->
+                <div class="team-member-card">
+                    <img src="https://placehold.co/120x120/3939a5/FFFFFF?text=KC" alt="Kelvin Chwara Sagini">
+                    <h3>Kelvin Chwara Sagini</h3>
+                    <p class="role">Lead FullStack Web Developer</p>
+                    <p class="bio">Kelvin is a seasoned full-stack developer with expertise in building robust and scalable web applications. He excels in both front-end and back-end technologies, ensuring seamless user experiences and powerful server-side logic.</p>
+                    <ul class="skills-list">
+                        <li><span class="skill-icon">⚛️</span> React.js</li>
+                        <li><span class="skill-icon">🐍</span> Django</li>
+                        <li><span class="skill-icon">🟢</span> Node.js</li>
+                        <li><span class="skill-icon">🍃</span> MongoDB</li>
+                    </ul>
+                    <div class="contact-info">
+                        <p><span class="contact-icon fas fa-envelope"></span> Email: <a href="mailto:kelvi20sagini@gmail.com">kelvi20sagini@gmail.com</a></p>
+                        <p><span class="contact-icon fas fa-phone"></span> Tel: <a href="tel:+254762132827">+254762132827</a></p>
+                        <p><span class="contact-icon fab fa-whatsapp"></span> WhatsApp: <a href="https://wa.me/+254762132827">+254762132827</a></p>
                     </div>
                 </div>
 
-                <div class="team-member">
-                    <img src="img/frank.jpg" alt="Frankline Mogendi">
-                    <h2>FRANKLINE MOGENDI</h2>
-                    <p>FullStack Web Developer. Proficient with React, Django, Node.js Frameworks</p>
-                    <div class="contact-details">
-                        <h3>Email: <a href="mailto:frankmogendi@gmail.com">frankmogendi@gmail.com</a></h3>
-                        <h3>Tel: <a href="tel:+254759652956">+254759652956</a></h3>
-                        <h3>WhatsApp: <a href="https://wa.me/+254759652956">+254759652956</a></h3>
+                <!-- Team Member 2: Frankline Mogendi -->
+                <div class="team-member-card">
+                    <img src="https://placehold.co/120x120/3939a5/FFFFFF?text=FM" alt="Frankline Mogendi">
+                    <h3>Frankline Mogendi</h3>
+                    <p class="role">Senior FullStack Web Developer</p>
+                    <p class="bio">Frankline specializes in developing high-performance web solutions with a keen eye for detail and user-centric design. His strong command of modern frameworks ensures efficient and effective project delivery.</p>
+                    <ul class="skills-list">
+                        <li><span class="skill-icon">⚛️</span> React.js</li>
+                        <li><span class="skill-icon">🐍</span> Django</li>
+                        <li><span class="skill-icon">🟢</span> Node.js</li>
+                        <li><span class="skill-icon">☁️</span> AWS</li>
+                    </ul>
+                    <div class="contact-info">
+                        <p><span class="contact-icon fas fa-envelope"></span> Email: <a href="mailto:frankmogendi@gmail.com">frankmogendi@gmail.com</a></p>
+                        <p><span class="contact-icon fas fa-phone"></span> Tel: <a href="tel:+254759652956">+254759652956</a></p>
+                        <p><span class="contact-icon fab fa-whatsapp"></span> WhatsApp: <a href="https://wa.me/+254759652956">+254759652956</a></p>
                     </div>
                 </div>
 
-                <div class="team-member">
-                    <img src="img/wesley.jpg" alt="Wesley Mabera">
-                    <h2>WESLEY MABERA</h2>
-                    <p>UI/UX Designer</p>
-                    <div class="contact-details">
-                        <h3>Email: <a href="mailto:wesleymabera@gmail.com">wesleymabera@gmail.com</a></h3>
-                        <h3>Tel: <a href="tel:+25469869990">+25469869990</a></h3>
-                        <h3>WhatsApp: <a href="https://wa.me/+25469869990">+25469869990</a></h3>
+                <!-- Team Member 3: Wesley Mabera -->
+                <div class="team-member-card">
+                    <img src="https://placehold.co/120x120/3939a5/FFFFFF?text=WM" alt="Wesley Mabera">
+                    <h3>Wesley Mabera</h3>
+                    <p class="role">Lead UI/UX Designer</p>
+                    <p class="bio">Wesley is passionate about creating intuitive and visually appealing user interfaces. He combines artistic vision with user psychology to deliver engaging digital experiences that resonate with audiences.</p>
+                    <ul class="skills-list">
+                        <li><span class="skill-icon">🎨</span> Figma</li>
+                        <li><span class="skill-icon">🖌️</span> Adobe XD</li>
+                        <li><span class="skill-icon">💡</span> Wireframing</li>
+                        <li><span class="skill-icon">🧪</span> User Testing</li>
+                    </ul>
+                    <div class="contact-info">
+                        <p><span class="contact-icon fas fa-envelope"></span> Email: <a href="mailto:wesleymabera@gmail.com">wesleymabera@gmail.com</a></p>
+                        <p><span class="contact-icon fas fa-phone"></span> Tel: <a href="tel:+25469869990">+25469869990</a></p>
+                        <p><span class="contact-icon fab fa-whatsapp"></span> WhatsApp: <a href="https://wa.me/+25469869990">+25469869990</a></p>
+                    </div>
+                </div>
+
+                <!-- Team Member 4: Sarah Chen -->
+                <div class="team-member-card">
+                    <img src="https://placehold.co/120x120/3939a5/FFFFFF?text=SC" alt="Sarah Chen">
+                    <h3>Sarah Chen</h3>
+                    <p class="role">Project Manager</p>
+                    <p class="bio">Sarah is an experienced project manager dedicated to ensuring projects are delivered on time, within budget, and to the highest quality standards. She excels in agile methodologies and team coordination.</p>
+                    <ul class="skills-list">
+                        <li><span class="skill-icon">📋</span> Agile Methodologies</li>
+                        <li><span class="skill-icon">🗓️</span> Project Planning</li>
+                        <li><span class="skill-icon">📊</span> Risk Management</li>
+                        <li><span class="skill-icon">💬</span> Stakeholder Communication</li>
+                    </ul>
+                    <div class="contact-info">
+                        <p><span class="contact-icon fas fa-envelope"></span> Email: <a href="mailto:sarah.chen@onetech.com">sarah.chen@onetech.com</a></p>
+                        <p><span class="contact-icon fas fa-phone"></span> Tel: <a href="tel:+254712345678">+254712345678</a></p>
+                        <p><span class="contact-icon fab fa-whatsapp"></span> WhatsApp: <a href="https://wa.me/+254712345678">+254712345678</a></p>
+                    </div>
+                </div>
+
+                <!-- Team Member 5: David Kimani -->
+                <div class="team-member-card">
+                    <img src="https://placehold.co/120x120/3939a5/FFFFFF?text=DK" alt="David Kimani">
+                    <h3>David Kimani</h3>
+                    <p class="role">Cybersecurity Specialist</p>
+                    <p class="bio">David is a cybersecurity expert focused on protecting digital assets and ensuring robust security postures for our clients. He specializes in vulnerability assessment and threat mitigation.</p>
+                    <ul class="skills-list">
+                        <li><span class="skill-icon">🛡️</span> Network Security</li>
+                        <li><span class="skill-icon">🔐</span> Penetration Testing</li>
+                        <li><span class="skill-icon">🚨</span> Incident Response</li>
+                        <li><span class="skill-icon">🔍</span> Security Audits</li>
+                    </ul>
+                    <div class="contact-info">
+                        <p><span class="contact-icon fas fa-envelope"></span> Email: <a href="mailto:david.kimani@onetech.com">david.kimani@onetech.com</a></p>
+                        <p><span class="contact-icon fas fa-phone"></span> Tel: <a href="tel:+254723456789">+254723456789</a></p>
+                        <p><span class="contact-icon fab fa-whatsapp"></span> WhatsApp: <a href="https://wa.me/+254723456789">+254723456789</a></p>
+                    </div>
+                </div>
+
+                <!-- Team Member 6: Emily Jones -->
+                <div class="team-member-card">
+                    <img src="https://placehold.co/120x120/3939a5/FFFFFF?text=EJ" alt="Emily Jones">
+                    <h3>Emily Jones</h3>
+                    <p class="role">Data Analyst</p>
+                    <p class="bio">Emily transforms complex data into actionable insights, helping businesses make informed decisions. Her expertise lies in data visualization, statistical analysis, and predictive modeling.</p>
+                    <ul class="skills-list">
+                        <li><span class="skill-icon">📊</span> Data Visualization</li>
+                        <li><span class="skill-icon">📈</span> Statistical Analysis</li>
+                        <li><span class="skill-icon">🐍</span> Python (Pandas, NumPy)</li>
+                        <li><span class="skill-icon">🗄️</span> SQL</li>
+                    </ul>
+                    <div class="contact-info">
+                        <p><span class="contact-icon fas fa-envelope"></span> Email: <a href="mailto:emily.jones@onetech.com">emily.jones@onetech.com</a></p>
+                        <p><span class="contact-icon fas fa-phone"></span> Tel: <a href="tel:+254734567890">+254734567890</a></p>
+                        <p><span class="contact-icon fab fa-whatsapp"></span> WhatsApp: <a href="https://wa.me/+254734567890">+254734567890</a></p>
                     </div>
                 </div>
             </div>

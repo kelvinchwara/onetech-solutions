@@ -11,199 +11,19 @@
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
-
-   <style>
-     /* Header Styles */
-     body {
-            margin: 10px 10px 0 0; /* 10px top and right margin */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #d3dce4;
-            color: #000000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-        header {
-            background-color: #fff;
-
-            color: #3939a5;
-            padding: 6px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .header-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            display: flex;
-
-            align-items: center; /* Center icon and text vertically */
-        }
-
-        .header-title i {
-            margin-right: 70px; /* Space between icon and title */
-            font-size: 1.5rem; /* Icon size */
-        }
-
-        /* Main Content Area */
-        .main-area {
-            display: flex;
-            margin-top: 80px; /* Space for fixed header */
-            max-width: 1200px;
-            margin: 80px auto 0;
-            flex-grow: 1;
-        }
-
-        /* Sidebar Navigation Styles */
-        .sidenav {
-            width: 220px;
-            background-color: #3939a5;
-            position: fixed;
-            top: 60px;
-            left: 0;
-            bottom: 0;
-            overflow-y: auto;
-            padding-top: 30px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidenav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidenav li a {
-            display: block;
-            padding: 5px 5px;
-            text-decoration: none;
-            color: #fff;
-            transition: background-color 0.3s;
-        }
-
-          .sidenav li a:hover {
-            background-color: #f8f9fa;
-            color: #007bff;
-        }
-
-        .sidenav li a.active {
-            background-color: #5d5dd1;
-            font-weight: bold;
-        }
-
-        /* Main Content Styles */
-        .main-content {
-            background-color: #fff;
-            padding: 30px;
-            margin-left: 240px; /* Space for sidebar */
-            flex-grow: 1;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .main-content h1, .main-content h2, .main-content h3 {
-            color: #3939a5;
-            margin-top: 0;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        
 
 
-.read-more {
-    background-color: #3939a5; /* Primary color */
-    color: #fff; /* Text color */
-    padding: 10px 15px; /* Padding for the button */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1rem; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-    text-align: center; /* Center the text */
-    display: inline-block; /* Make the button inline-block */
-}
-
-.read-more:hover {
-    background-color: #5d5dd1; /* Lighter shade on hover */
-}
-
-    /* Button Styles */
-    .cta-button {
-        background-color: #3939a5;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-        background-color: #5d5dd1;
-    }
-
-    /* Responsive Design - Sidebar Remains Vertical */
-    @media (max-width: 992px) {
-        .sidenav {
-            width: 180px;
-        }
-        .main-content {
-            margin-left: 190px; /* Adjusted for 10px space */
-        }
-    }
-
-    @media (max-width: 768px) {
-        .sidenav {
-            width: 150px;
-            top: 50px;
-            bottom: 0;
-        }
-        .main-content {
-            margin-left: 160px; /* Adjusted for 10px space */
-            padding-top: 70px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .sidenav {
-            width: 100px;
-            top: 60px;
-            bottom: 0;
-            position: fixed;
-            overflow-y: auto;
-        }
-        .sidenav ul {
-            display: block;
-            padding: 0;
-        }
-        .sidenav li {
-            margin-right: 0;
-        }
-        .sidenav li a {
-            font-size: 0.8rem;
-            padding: 8px 10px;
-            display: block;
-        }
-        .main-content {
-            margin-left: 110px; /* Adjusted for 10px space */
-            padding-top: 60px;
-            padding: 10px;
-        }
-    }
-</style>
+      
+    </style>
 </head>
 <body>
-    <header>
+     <header>
         <div class="header-title">
-            <i class=""><img src="icon.png"  style="height: 40px; width: 40px; border-radius: 50%" alt=""></i> <!-- Icon added here -->
+            <img src="https://placehold.co/40x40/3939a5/FFFFFF?text=OS" style="height: 40px; width: 40px; border-radius: 50%" alt="Onetech Solutions Logo">
             ONETECH SOLUTIONS
         </div>
     </header>
@@ -215,148 +35,180 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="project.html">Projects</a></li>
                 <li><a href="team.html">Our Team</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <main class="main-content">
-             <h2>Our Services</h2>
+         <main class="main-content">
+            <h1 style="text-align: center; font-size: 2.5rem; font-weight: bold; margin-bottom: 30px; color: #3939a5;">Our Projects</h1>
+            
+            <section id="services" class="service-grid">
+                <!-- Service 1: User Experience (UX) Design -->
+                <div class="service-card">
+                    <i class="icon fas fa-user-friends"></i>
+                    <h3>User Experience (UX) Design</h3>
+                    <p class="short-description">Creating intuitive and user-friendly experiences that enhance user satisfaction.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>Our UX design services focus on creating intuitive and user-friendly experiences that enhance user satisfaction. We conduct thorough user research to understand your target audience, develop user personas, and map out user journeys. Our team creates wireframes and prototypes to visualize the user experience before implementation, ensuring that the final product meets user needs and expectations.</p>
+                        <p><strong>Benefits:</strong> Improved user satisfaction, increased retention rates, and higher conversion rates.</p>
+                    </div>
+                </div>
 
-    <section id="services" class="service-container">
+                <!-- Service 2: Search Engine Optimization (SEO) -->
+                <div class="service-card">
+                    <i class="icon fas fa-search"></i>
+                    <h3>Search Engine Optimization (SEO)</h3>
+                    <p class="short-description">Improving your website's visibility on search engines to drive organic traffic.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>Our SEO services are designed to improve your website's visibility on search engines. We perform comprehensive keyword research to identify the best terms to target, optimize your website's on-page elements, and implement technical SEO strategies. Our team also focuses on building high-quality backlinks to enhance your site's authority and ranking.</p>
+                        <p><strong>Benefits:</strong> Increased organic traffic, better search rankings, and enhanced online presence.</p>
+                    </div>
+                </div>
 
+                <!-- Service 3: Content Creation and Marketing -->
+                <div class="service-card">
+                    <i class="icon fas fa-pen-nib"></i>
+                    <h3>Content Creation and Marketing</h3>
+                    <p class="short-description">Engaging users with high-quality content tailored to your audience.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>We provide comprehensive content creation and marketing services to engage users and drive traffic to your website. Our team of skilled writers produces high-quality blog posts, articles, and social media content tailored to your audience. We also develop content marketing strategies to promote your content effectively across various channels.</p>
+                        <p><strong>Benefits:</strong> Improved brand awareness, audience engagement, and lead generation.</p>
+                    </div>
+                </div>
 
-        <div class="service">
-            <h3>1. User Experience (UX) Design</h3>
-            <p>Creating intuitive and user-friendly experiences that enhance user satisfaction.</p>
-            <button class="read-more" onclick="toggleDetails('ux-details')">Read More</button>
-            <div id="ux-details" class="service-details">
-                <p>Our UX design services focus on creating intuitive and user-friendly experiences that enhance user satisfaction. We conduct thorough user research to understand your target audience, develop user personas, and map out user journeys. Our team creates wireframes and prototypes to visualize the user experience before implementation, ensuring that the final product meets user needs and expectations.</p>
-                <p><strong>Benefits:</strong> Improved user satisfaction, increased retention rates, and higher conversion rates.</p>
-            </div>
-        </div>
+                <!-- Service 4: E-commerce Solutions -->
+                <div class="service-card">
+                    <i class="icon fas fa-shopping-cart"></i>
+                    <h3>E-commerce Solutions</h3>
+                    <p class="short-description">Helping businesses establish and optimize their online stores for success.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>Our e-commerce solutions are designed to help businesses establish and optimize their online stores. We offer services such as shopping cart integration, payment gateway setup, and product catalog management. Our team ensures that your e-commerce site is user-friendly, secure, and optimized for conversions.</p>
+                        <p><strong>Benefits:</strong> Increased sales, improved customer experience, and streamlined operations.</p>
+                    </div>
+                </div>
 
-        <div class="service">
-            <h3>2. Search Engine Optimization (SEO)</h3>
-            <p>Improving your website's visibility on search engines to drive organic traffic.</p>
-            <button class="read-more" onclick="toggleDetails('seo-details')">Read More</button>
-            <div id="seo-details" class="service-details">
-                <p>Our SEO services are designed to improve your website's visibility on search engines. We perform comprehensive keyword research to identify the best terms to target, optimize your website's on-page elements, and implement technical SEO strategies. Our team also focuses on building high-quality backlinks to enhance your site's authority and ranking.</p>
-                <p><strong>Benefits:</strong> Increased organic traffic, better search rankings, and enhanced online presence.</p>
-            </div>
-        </div>
+                <!-- Service 5: Social Media Management -->
+                <div class="service-card">
+                    <i class="icon fab fa-facebook-square"></i>
+                    <h3>Social Media Management</h3>
+                    <p class="short-description">Enhancing your online presence through effective social media strategies.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>Our social media management services enhance your online presence by creating and curating engaging content across various platforms. We develop a tailored social media strategy that aligns with your brand goals, manage your social media accounts, and engage with your audience to build a loyal community. Our analytics tools help track performance and optimize strategies for better results.</p>
+                        <p><strong>Benefits:</strong> Increased brand visibility, audience engagement, and customer loyalty.</p>
+                    </div>
+                </div>
 
-        <div class="service">
-            <h3>3. Content Creation and Marketing</h3>
-            <p>Engaging users with high-quality content tailored to your audience.</p>
-            <button class="read-more" onclick="toggleDetails('content-details')">Read More</button>
-            <div id="content-details" class="service-details">
-                <p>We provide comprehensive content creation and marketing services to engage users and drive traffic to your website. Our team of skilled writers produces high-quality blog posts, articles, and social media content tailored to your audience. We also develop content marketing strategies to promote your content effectively across various channels.</p>
-                <p><strong>Benefits:</strong> Improved brand awareness, audience engagement, and lead generation.</p>
-            </div>
-        </div>
+                <!-- Service 6: Branding and Identity Development -->
+                <div class="service-card">
+                    <i class="icon fas fa-lightbulb"></i>
+                    <h3>Branding and Identity Development</h3>
+                    <p class="short-description">Establishing a strong brand identity that resonates with your audience.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>We help businesses establish a strong brand identity that resonates with their target audience. Our branding services include logo design, color palette selection, typography, and the creation of brand guidelines. We work closely with you to ensure that your brand's voice and message are consistent across all platforms, helping you stand out in a competitive market.</p>
+                        <p><strong>Benefits:</strong> Stronger brand recognition, consistency across platforms, and improved customer trust.</p>
+                    </div>
+                </div>
 
-        <div class="service">
-            <h3>4. E-commerce Solutions</h3>
-            <p>Helping businesses establish and optimize their online stores for success.</p>
-            <button class="read-more" onclick="toggleDetails('ecommerce-details')">Read More</button>
-            <div id="ecommerce-details" class="service-details">
-                <p>Our e-commerce solutions are designed to help businesses establish and optimize their online stores. We offer services such as shopping cart integration, payment gateway setup, and product catalog management. Our team ensures that your e-commerce site is user-friendly, secure, and optimized for conversions.</p>
-                <p><strong>Benefits:</strong> Increased sales, improved customer experience, and streamlined operations.</p>
-            </div>
-        </div>
+                <!-- Service 7: Website Maintenance and Support -->
+                <div class="service-card">
+                    <i class="icon fas fa-tools"></i>
+                    <h3>Website Maintenance and Support</h3>
+                    <p class="short-description">Ensuring your website runs smoothly with ongoing maintenance and support.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>Our website maintenance and support services ensure that your website runs smoothly and remains up-to-date. We provide regular updates, backups, and security monitoring to protect your site from vulnerabilities. Our team is available to troubleshoot any issues that arise, ensuring minimal downtime and optimal performance.</p>
+                        <p><strong>Benefits:</strong> Peace of mind for clients, improved website performance, and reduced downtime.</p>
+                    </div>
+                </div>
 
-        <div class="service">
-            <h3>5. Social Media Management</h3>
-            <p>Enhancing your online presence through effective social media strategies.</p>
-            <button class="read-more" onclick="toggleDetails('social-details')">Read More</button>
-            <div id="social-details" class="service-details">
-                <p>Our social media management services enhance your online presence by creating and curating engaging content across various platforms. We develop a tailored social media strategy that aligns with your brand goals, manage your social media accounts, and engage with your audience to build a loyal community. Our analytics tools help track performance and optimize strategies for better results.</p>
-                <p><strong>Benefits:</strong> Increased brand visibility, audience engagement, and customer loyalty.</p>
-            </div>
-        </div>
+                <!-- Service 8: Analytics and Reporting -->
+                <div class="service-card">
+                    <i class="icon fas fa-chart-line"></i>
+                    <h3>Analytics and Reporting</h3>
+                    <p class="short-description">Tracking your website's performance to make informed decisions.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>We provide analytics and reporting services to help you track and understand your website's performance. Our team sets up Google Analytics and other tracking tools to monitor key performance indicators (KPIs). We deliver custom reports that provide actionable insights, helping you make informed decisions to improve your online strategy.</p>
+                        <p><strong>Benefits:</strong> Informed decision-making, improved marketing strategies, and enhanced ROI.</p>
+                    </div>
+                </div>
 
-        <div class="service">
-            <h3>6. Branding and Identity Development</h3>
-            <p>Establishing a strong brand identity that resonates with your audience.</p>
-            <button class="read-more" onclick="toggleDetails('branding-details')">Read More</button>
-            <div id="branding-details" class="service-details">
-                <p>We help businesses establish a strong brand identity that resonates with their target audience. Our branding services include logo design, color palette selection, typography, and the creation of brand guidelines. We work closely with you to ensure that your brand's voice and message are consistent across all platforms, helping you stand out in a competitive market.</p>
-                <p><strong>Benefits:</strong> Stronger brand recognition, consistency across platforms, and improved customer trust.</p>
-            </div>
-        </div>
+                <!-- Service 9: Mobile App Development -->
+                <div class="service-card">
+                    <i class="icon fas fa-mobile-alt"></i>
+                    <h3>Mobile App Development</h3>
+                    <p class="short-description">Creating user-friendly mobile applications for iOS and Android.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>We specialize in mobile app development for both iOS and Android platforms. Our team designs and develops user-friendly applications that meet your business needs. We focus on creating seamless user experiences, integrating necessary features, and ensuring that your app is optimized for performance and security.</p>
+                        <p><strong>Benefits:</strong> Increased customer engagement, accessibility, and brand loyalty.</p>
+                    </div>
+                </div>
 
-        <div class="service">
-            <h3>7. Website Maintenance and Support</h3>
-            <p>Ensuring your website runs smoothly with ongoing maintenance and support.</p>
-            <button class="read-more" onclick="toggleDetails('maintenance-details')">Read More</button>
-            <div id="maintenance-details" class="service-details">
-                <p>Our website maintenance and support services ensure that your website runs smoothly and remains up-to-date. We provide regular updates, backups, and security monitoring to protect your site from vulnerabilities. Our team is available to troubleshoot any issues that arise, ensuring minimal downtime and optimal performance.</p>
-                <p><strong>Benefits:</strong> Peace of mind for clients, improved website performance, and reduced downtime.</p>
-            </div>
-        </div>
+                <!-- Service 10: Consultation Services -->
+                <div class="service-card">
+                    <i class="icon fas fa-handshake"></i>
+                    <h3>Consultation Services</h3>
+                    <p class="short-description">Providing expert guidance to help strategize your digital presence.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>Our consultation services provide expert guidance to help businesses strategize their digital presence. We analyze your current strategies, identify areas for improvement, and offer tailored recommendations. Whether you need help with digital marketing, technology selection, or overall business strategy, our team is here to assist you.</p>
+                        <p><strong>Benefits:</strong> Tailored strategies, expert insights, and improved business outcomes.</p>
+                    </div>
+                </div>
 
-        <div class="service">
-            <h3>8. Analytics and Reporting</h3>
-            <p>Tracking your website's performance to make informed decisions.</p>
-            <button class="read-more" onclick="toggleDetails('analytics-details')">Read More</button>
-            <div id="analytics-details" class="service-details">
-                <p>We provide analytics and reporting services to help you track and understand your website's performance. Our team sets up Google Analytics and other tracking tools to monitor key performance indicators (KPIs). We deliver custom reports that provide actionable insights, helping you make informed decisions to improve your online strategy.</p>
-                <p><strong>Benefits:</strong> Informed decision-making, improved marketing strategies, and enhanced ROI.</p>
-            </div>
-        </div>
+                <!-- Service 11: Training and Workshops -->
+                <div class="service-card">
+                    <i class="icon fas fa-chalkboard-teacher"></i>
+                    <h3>Training and Workshops</h3>
+                    <p class="short-description">Empowering your team with skills through tailored training sessions.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>We offer training sessions and workshops on various topics, including digital marketing, SEO, and social media management. Our training programs are designed to empower your team with the skills they need to succeed in the digital landscape. We customize our workshops to meet your specific needs, ensuring that your team gains practical knowledge and actionable insights that can be applied immediately.</p>
+                        <p><strong>Benefits:</strong> Empowered teams, improved skills, and enhanced productivity.</p>
+                    </div>
+                </div>
 
-        <div class="service">
-            <h3>9. Mobile App Development</h3>
-            <p>Creating user-friendly mobile applications for iOS and Android.</p>
-            <button class="read-more" onclick="toggleDetails('app-details')">Read More</button>
-            <div id="app-details" class="service-details">
-                <p>We specialize in mobile app development for both iOS and Android platforms. Our team designs and develops user-friendly applications that meet your business needs. We focus on creating seamless user experiences, integrating necessary features, and ensuring that your app is optimized for performance and security.</p>
-                <p><strong>Benefits:</strong> Increased customer engagement, accessibility, and brand loyalty.</p>
-            </div>
-        </div>
-
-        <div class="service">
-            <h3>10. Consultation Services</h3>
-            <p>Providing expert guidance to help strategize your digital presence.</p>
-            <button class="read-more" onclick="toggleDetails('consultation-details')">Read More</button>
-            <div id="consultation-details" class="service-details">
-                <p>Our consultation services provide expert guidance to help businesses strategize their digital presence. We analyze your current strategies, identify areas for improvement, and offer tailored recommendations. Whether you need help with digital marketing, technology selection, or overall business strategy, our team is here to assist you.</p>
-                <p><strong>Benefits:</strong> Tailored strategies, expert insights, and improved business outcomes.</p>
-            </div>
-        </div>
-
-        <div class="service">
-            <h3>11. Training and Workshops</h3>
-            <p>Empowering your team with skills through tailored training sessions.</p>
-            <button class="read-more" onclick="toggleDetails('training-details')">Read More</button>
-            <div id="training-details" class="service-details">
-                <p>We offer training sessions and workshops on various topics, including digital marketing, SEO, and social media management. Our training programs are designed to empower your team with the skills they need to succeed in the digital landscape. We customize our workshops to meet your specific needs, ensuring that your team gains practical knowledge and actionable insights that can be applied immediately.</p>
-                <p><strong>Benefits:</strong> Empowered teams, improved skills, and enhanced productivity.</p>
-            </div>
-        </div>
-
-        <div class="service">
-            <h3>12. Accessibility Services</h3>
-            <p>Ensuring your website is accessible to all users, including those with disabilities.</p>
-            <button class="read-more" onclick="toggleDetails('accessibility-details')">Read More</button>
-            <div id="accessibility-details" class="service-details">
-                <p>We ensure that your website is accessible to all users, including those with disabilities. Our accessibility services include conducting audits to identify barriers, implementing best practices to enhance usability, and ensuring compliance with accessibility standards such as WCAG. We believe that everyone should have equal access to information and services online.</p>
-                <p><strong>Benefits:</strong> Broader audience reach, improved user experience, and compliance with legal standards.</p>
-            </div>
-        </div>
-    </section>
+                <!-- Service 12: Accessibility Services -->
+                <div class="service-card">
+                    <i class="icon fas fa-universal-access"></i>
+                    <h3>Accessibility Services</h3>
+                    <p class="short-description">Ensuring your website is accessible to all users, including those with disabilities.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="full-details">
+                        <p>We ensure that your website is accessible to all users, including those with disabilities. Our accessibility services include conducting audits to identify barriers, implementing best practices to enhance usability, and ensuring compliance with accessibility standards such as WCAG. We believe that everyone should have equal access to information and services online.</p>
+                        <p><strong>Benefits:</strong> Broader audience reach, improved user experience, and compliance with legal standards.</p>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
-<script>
-  function toggleDetails(serviceId) {
-    const details = document.getElementById(serviceId);
-    if (details.style.display === "none" || details.style.display === "") {
-      details.style.display = "block";
-    } else {
-      details.style.display = "none";
-    }
-  }
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            serviceCards.forEach(card => {
+                const readMoreBtn = card.querySelector('.read-more-btn');
+                const fullDetails = card.querySelector('.full-details');
+
+                readMoreBtn.addEventListener('click', function() {
+                    if (fullDetails.style.display === 'block') {
+                        fullDetails.style.display = 'none';
+                        readMoreBtn.textContent = 'Read More';
+                    } else {
+                        fullDetails.style.display = 'block';
+                        readMoreBtn.textContent = 'Read Less';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

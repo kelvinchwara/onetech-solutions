@@ -2,300 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onetech Solutions | Innovative Tech Services</title>
     <meta name="description" content="Onetech Solutions offers innovative tech services including UX design, SEO, content creation, and more.">
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Placeholder image for icon, as local files aren't directly accessible in this environment -->
+    <link rel="icon" href="https://placehold.co/16x16/3939a5/FFFFFF?text=OS" sizes="any">
+    <link rel="icon" href="https://placehold.co/32x32/3939a5/FFFFFF?text=OS" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://placehold.co/180x180/3939a5/FFFFFF?text=OS">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5e5e5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       
 
-  <style>
-        /* Base Styles */
-        body {
-            margin: 10px 10px 0 0; /* 10px top and right margin */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #d3dce4;
-            color: #000000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding-bottom: 60px;
-            box-sizing: border-box;
-        }
-
-        /* Header Styles */
-       /* Header Styles */
-        header {
-            background-color: #fff;
-            color: #3939a5;
-            padding: 6px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .header-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            display: flex;
-
-            align-items: center; /* Center icon and text vertically */
-        }
-
-        .header-title i {
-            margin-right: 70px; /* Space between icon and title */
-            font-size: 1.5rem; /* Icon size */
-        }
-
-        /* Main Content Area */
-        .main-area {
-            display: flex;
-            max-width: 1400px;
-            margin: 60px auto 0;
-            flex-grow: 1;
-        }
-
-        /* Sidebar Navigation Styles */
-        .sidenav {
-            width: 220px;
-            background-color: #3939a5;
-            position: fixed;
-            top: 60px;
-            left: 0;
-            bottom: 0; /* Full height */
-            overflow-y: auto;
-            padding-top: 20px;
-            border-right: 1px solid #dee2e6;
-            height: 100%; /* Full height */
-        }
-
-        .sidenav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidenav li a {
-            display: block;
-            padding: 5px 5px;
-            text-decoration: none;
-            color: #fff;
-            transition: background-color 0.3s;
-        }
-
-        .sidenav li a:hover {
-            background-color: #f8f9fa;
-            color: #007bff;
-        }
-
-        .sidenav li a.active {
-            background-color: #5d5dd1;
-            color: #fff;
-            font-weight: 500;
-            margin-top: 20px;
-        }
-
-        /* Main Content Styles */
-        .main-content {
-            background-color: #fff;
-            padding: 20px;
-            margin-left: 230px; /* 10px space from sidebar */
-            margin-right: 10px; /* 10px right margin */
-            flex-grow: 1;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-
-        .main-content h1, .main-content h2, .main-content h3 {
-            color: #212529;
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-        /* Background and Shadow for Each Section */
-        .company-overview {
-            background-color: #e3f2fd; /* Light blue */
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .mission-vision {
-            background-color: #f3e5f5; /* Light purple */
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .values-history {
-            background-color: #fff3e0; /* Light orange */
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .team-introduction {
-            background-color: #e8f5e9; /* Light green */
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .call-to-action {
-
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center; /* Center the button */
-        }
-
-        /* Button Styles */
-        .cta-button {
-            background-color: #3939a5;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-          text-decoration: none;
-        }
-
-        .cta-button:hover {
-            background-color: #506780;
-        }
-
-        /* Responsive Design - Sidebar Remains Vertical */
-        @media (max-width: 992px) {
-            .sidenav {
-                width: 180px;
-            }
-            .main-content {
-                margin-left: 190px; /* Adjusted for 10px space */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .sidenav {
-                width: 150px;
-                top: 50px;
-                bottom: 0;
-            }
-            .main-content {
-                margin-left: 160px; /* Adjusted for 10px space */
-                padding-top: 70px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .sidenav {
-                width: 100px;
-                top: 60px;
-                bottom: 0;
-                position: fixed;
-                overflow-y: auto;
-            }
-            .sidenav ul {
-                display: block;
-                padding: 0;
-            }
-            .sidenav li {
-                margin-right: 0;
-            }
-            .sidenav li a {
-                font-size: 0.8rem;
-                padding: 8px 10px;
-                display: block;
-            }
-            .main-content {
-                margin-left: 110px; /* Adjusted for 10px space */
-                padding-top: 60px;
-                padding: 10px;
-            }
-        }
+        
+        
     </style>
 </head>
 <body>
-    <header>
+    <!-- Header Section -->
+   <header>
         <div class="header-title">
-            <i class=""><img src="icon.png"  style="height: 40px; width: 40px; border-radius: 50%" alt=""></i> <!-- Icon added here -->
+            <img src="https://placehold.co/40x40/3939a5/FFFFFF?text=OS" style="height: 40px; width: 40px; border-radius: 50%" alt="Onetech Solutions Logo">
             ONETECH SOLUTIONS
         </div>
     </header>
 
     <div class="main-area">
-       <nav class="sidenav">
+        <nav class="sidenav">
             <ul>
                 <li><a href="#" class="active">Dashboard</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="project.html">Projects</a></li>
                 <li><a href="team.html">Our Team</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
 
+        <!-- Main Content Section -->
         <main class="main-content">
-            <h2 style="text-align: center">About Us</h2>
-            <div class="about-container">
-                <section class="company-overview">
-                    <h2>Company Overview</h2>
-                    <p>OneTech Solution is a leading technology solutions provider dedicated to helping businesses navigate the complexities of the digital landscape. Founded in 2020, we have quickly established ourselves as a trusted partner for organizations seeking innovative and effective technology solutions.</p>
-                    <p>Our team of experts specializes in a wide range of services, including</p>
-                    <div style="margin-left: 50px">
-                        <p>Software Development: Tailored software solutions to meet specific business needs.</p>
-                        <p><b>1. Web Design -</b> User-friendly and visually appealing websites that enhance user experience.</p>
-                        <p><b>2. Digital Marketing - </b> Strategies to increase online visibility and drive customer engagement.</p>
-                        <p><b>3. IT Consulting -</b> Strategic advice to optimize technology investments and improve operational efficiency.</p>
+            <h1 style="text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 2rem;">About Onetech Solutions</h1>
+
+            <!-- Company Overview Section -->
+            <section class="company-overview">
+                <h2>Who We Are <span class="icon">🏢</span></h2>
+                <p>Onetech Solutions is a leading technology solutions provider dedicated to helping businesses navigate the complexities of the digital landscape. Founded in <strong style="color: #303080;">2020</strong>, we've quickly established ourselves as a trusted partner for organizations seeking innovative and effective technology solutions.</p>
+                <p>Our team of experts specializes in a wide range of services, including:</p>
+                <ul class="key-services-list">
+                    <li><span class="icon">💻</span> <strong style="color: #303080;">Software Development:</strong> Tailored software solutions to meet specific business needs.</li>
+                    <li><span class="icon">🎨</span> <strong style="color: #303080;">Web Design:</strong> User-friendly and visually appealing websites that enhance user experience.</li>
+                    <li><span class="icon">📈</span> <strong style="color: #303080;">Digital Marketing:</strong> Strategies to increase online visibility and drive customer engagement.</li>
+                    <li><span class="icon">💡</span> <strong style="color: #303080;">IT Consulting:</strong> Strategic advice to optimize technology investments and improve operational efficiency.</li>
+                </ul>
+                <p>We are committed to delivering high-quality solutions that drive results and enhance operational efficiency for your business.</p>
+            </section>
+
+            <!-- Mission & Vision Section -->
+            <section class="mission-vision">
+                <h2>Our Purpose & Direction <span class="icon">🧭</span></h2>
+                <div class="purpose-container">
+                    <div class="purpose-item">
+                        <h3>Our Mission <span class="icon">🎯</span></h3>
+                        <p>At Onetech Solutions, our mission is to deliver innovative technology solutions that empower businesses to achieve their goals. We strive to provide exceptional service and support to our clients, ensuring their success in a rapidly changing digital landscape.</p>
                     </div>
-                    <p>We are committed to delivering high-quality solutions that drive results and enhance operational efficiency.</p>
-                </section>
+                    <div class="purpose-item">
+                        <h3>Our Vision <span class="icon">👀</span></h3>
+                        <p>We envision a world where technology seamlessly integrates into everyday life, enhancing productivity and connectivity. Our goal is to be a leader in the tech industry, known for our unwavering commitment to quality, innovation, and customer satisfaction.</p>
+                    </div>
+                </div>
+            </section>
 
-                <section class="mission-vision">
-                    <h2>Our Mission</h2>
-                    <p>At OneTech Solution, our mission is to deliver innovative technology solutions that empower businesses to achieve their goals. We strive to provide exceptional service and support to our clients, ensuring their success in a rapidly changing digital landscape.</p>
+            <!-- Our Values Section -->
+            <section class="our-values">
+                <h2>The Principles We Live By <span class="icon">🤝</span></h2>
+                <p>Our core values guide every decision we make and every service we provide:</p>
+                <ul>
+                    <li><span class="icon">🛡️</span> <strong style="color: #303080;">Integrity:</strong> We uphold the highest standards of integrity in all our actions, fostering trust and transparency.</li>
+                    <li><span class="icon">🧪</span> <strong style="color: #303080;">Innovation:</strong> We embrace change and continuously seek new ways to improve our services and deliver cutting-edge solutions.</li>
+                    <li><span class="icon">👥</span> <strong style="color: #303080;">Collaboration:</strong> We believe in the power of teamwork and collaboration to achieve common goals, working closely with our clients and each other.</li>
+                    <li><span class="icon">❤️</span> <strong style="color: #303080;">Customer Focus:</strong> Our clients are at the heart of everything we do. We relentlessly strive to understand their needs and exceed their expectations.</li>
+                </ul>
+            </section>
 
-                    <h2>Our Vision</h2>
-                    <p>We envision a world where technology seamlessly integrates into everyday life, enhancing productivity and connectivity. Our goal is to be a leader in the tech industry, known for our commitment to quality, innovation, and customer satisfaction.</p>
-                </section>
+            <!-- Team Introduction Section -->
+            <section class="team-introduction">
+                <h2>Meet the Minds Behind Onetech Solutions <span class="icon">⚙️</span></h2>
+                <p>Our team is composed of highly skilled professionals with diverse backgrounds and expertise. We believe our strength lies in our people, and we are proud to have a team dedicated to delivering exceptional results for our clients.</p>
+                <p>From software developers and designers to digital marketers and IT consultants, each member plays a crucial role in helping our clients succeed. Together, we work collaboratively to create innovative solutions that meet the unique needs of every business we serve.</p>
+                <div class="call-to-action">
+                    <a href="team.html" class="cta-button">
+                        See Our Full Team ➡️
+                    </a>
+                </div>
+            </section>
 
-                <section class="values-history">
-                    <h2>Our Values</h2>
-                    <ul>
-                        <li><strong>Integrity - </strong> We uphold the highest standards of integrity in all our actions.</li>
-                        <li><strong>Innovation - </strong> We embrace change and continuously seek new ways to improve our services.</li>
-                        <li><strong>Collaboration - </strong> We believe in the power of teamwork and collaboration to achieve common goals.</li>
-                        <li><strong>Customer Focus - </strong> Our clients are at the heart of everything we do, and we strive to exceed their expectations.</li>
-                    </ul>
-
-                    </section>
-
-                <section class="team-introduction">
-                    <h2>Meet Our Team</h2>
-                    <p>Our team is composed of highly skilled professionals with diverse backgrounds and expertise. We believe that our strength lies in our people, and we are proud to have a team that is dedicated to delivering exceptional results for our clients.</p>
-                    <p>From software developers and designers to digital marketers and IT consultants, each member of our team plays a crucial role in helping our clients succeed. Together, we work collaboratively to create innovative solutions that meet the unique needs of each business we serve.</p>
-                    <section class="call-to-action">
-                        <a href="team.html" class="cta-button">Our Team</a>
-                    </section>
-                </section>
-            </div>
+            <!-- Final Call to Action Section -->
+            <section class="final-cta">
+                <h2>Ready to Partner with Us? <span class="icon">🤝</span></h2>
+                <p>Discover how our expertise can drive your business forward.</p>
+                <a href="contact.html" class="cta-button">
+                    Contact Us Today ✉️
+                </a>
+            </section>
         </main>
     </div>
 </body>
