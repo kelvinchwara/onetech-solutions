@@ -772,19 +772,11 @@
             const hamburgerMenu = document.getElementById('hamburgerMenu');
             const sidenav = document.getElementById('mySidenav');
             const mainContent = document.querySelector('.main-content'); // Get main content for margin adjustment
-
+            
             // Toggle sidebar and hamburger icon state
             hamburgerMenu.addEventListener('click', function () {
                 sidenav.classList.toggle('open');
                 hamburgerMenu.classList.toggle('open');
-                // Adjust main content margin when sidebar is open/closed on mobile
-                if (window.innerWidth <= 768) {
-                    if (sidenav.classList.contains('open')) {
-                        mainContent.style.marginLeft = '250px'; // Adjust for sidebar width
-                    } else {
-                        mainContent.style.marginLeft = '0';
-                    }
-                }
             });
 
             // Close sidebar when a navigation link is clicked (optional, but good for UX)
@@ -794,24 +786,11 @@
                     if (window.innerWidth <= 768) { // Only close on small screens
                         sidenav.classList.remove('open');
                         hamburgerMenu.classList.remove('open');
-                        mainContent.style.marginLeft = '0';
                     }
                 });
             });
-
-            // Handle window resize to adjust main content margin for desktop
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    sidenav.classList.remove('open'); // Ensure sidebar is open on desktop
-                    hamburgerMenu.classList.remove('open'); // Hide hamburger icon on desktop
-                    mainContent.style.marginLeft = '220px'; // Default desktop margin
-                } else {
-                    // On mobile, if sidebar is not open, reset margin
-                    if (!sidenav.classList.contains('open')) {
-                        mainContent.style.marginLeft = '0';
-                    }
-                }
-            });
+        });
+           
 
             // Read More functionality for service cards
             const readMoreButtons = document.querySelectorAll('.read-more-btn');
@@ -835,7 +814,7 @@
                     }
                 });
             });
-        });
+    
     </script>
 </body>
 </html>
