@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +11,7 @@
     <link rel="apple-touch-icon" href="https://placehold.co/180x180/3939a5/FFFFFF?text=OS">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* General Body Styles */
         body {
@@ -143,40 +141,115 @@
             box-sizing: border-box; /* Include padding in width */
         }
 
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, #3939a5, #6a5acd); /* Gradient background */
+        /* Previous Service Cards Specific Styles (for "Read More") */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card .icon {
+            font-size: 3.5rem;
+            color: #3939a5;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: #3939a5;
+            margin-bottom: 15px;
+        }
+
+        .service-card .short-description {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .service-card .full-details {
+            font-size: 0.95rem;
+            color: #666;
+            text-align: left;
+            margin-top: 15px;
+            display: none; /* Hidden by default */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .service-card .full-details.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .service-card .full-details p {
+            margin-bottom: 10px;
+        }
+
+        .service-card .full-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-btn {
+            background-color: #ffc107;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: auto; /* Pushes button to the bottom */
+        }
+
+        .read-more-btn:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+        }
+
+        /* New Styles for Services Page Content (from previous turn) */
+        .hero-section-services {
+            background: linear-gradient(135deg, #3939a5, #6a5acd);
             color: #fff;
             padding: 60px 40px;
             text-align: center;
-            border-radius: 15px; /* Rounded corners */
+            border-radius: 15px;
             margin-bottom: 40px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-            overflow: hidden; /* For animations */
         }
 
-        .hero-section h1 {
+        .hero-section-services h1 {
             font-size: 2.8rem;
             margin-bottom: 20px;
             line-height: 1.2;
             font-weight: 700;
         }
 
-        .hero-section p {
+        .hero-section-services p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 30px;
             opacity: 0.9;
         }
 
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-        }
-
-        .cta-button-hero {
+        .hero-section-services .cta-button {
             display: inline-block;
             padding: 15px 30px;
             background-color: #ffc107; /* Amber/Yellow */
@@ -188,197 +261,147 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .cta-button-hero:hover {
+        .hero-section-services .cta-button:hover {
             background-color: #e0a800; /* Darker yellow on hover */
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .cta-button-hero.transparent {
-            background-color: transparent;
-            border: 2px solid #fff;
-            color: #fff;
-        }
-
-        .cta-button-hero.transparent:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #fff;
-        }
-
-        /* Mission & Vision Section */
-        .mission-vision-section {
-            display: flex;
-            justify-content: space-around;
-            gap: 30px;
+        .service-list-section {
             margin-bottom: 40px;
-            flex-wrap: wrap; /* Allow cards to wrap */
         }
 
-        .mission-card, .vision-card {
+        .service-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item-new {
             background-color: #fff;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            flex: 1;
-            min-width: 300px; /* Minimum width for cards */
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .mission-card:hover, .vision-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .mission-card h3, .vision-card h3 {
-            color: #3939a5;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .mission-card p, .vision-card p {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        /* Services Overview Section */
-        .services-overview-section {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .services-overview-section h2 {
-            color: #3939a5;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            font-weight: bold;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .service-item {
-            background-color: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-item:hover {
+        .service-item-new:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
-        .service-item span {
-            font-size: 3rem;
-            display: block;
+        .service-item-new i {
+            font-size: 3.5rem;
+            color: #3939a5;
             margin-bottom: 15px;
         }
 
-        .service-item h4 {
+        .service-item-new h3 {
+            font-size: 1.6rem;
             color: #3939a5;
-            font-size: 1.4rem;
             margin-bottom: 10px;
         }
 
-        .service-item p {
+        .service-item-new p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Styles for the new "Our Process" section */
+        .process-section {
+            background-color: #e0f7fa; /* Light blue */
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .process-section h2 {
+            color: #3939a5;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .process-section .subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .step-card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            position: relative;
+            padding-top: 60px; /* Space for the step number */
+        }
+
+        .step-card .step-number {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffc107; /* Amber/Yellow */
+            opacity: 0.8;
+        }
+
+        .step-card h3 {
+            font-size: 1.4rem;
+            color: #3939a5;
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
             font-size: 0.95rem;
             color: #666;
         }
 
-        .button-container {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .cta-button-final {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #3939a5;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: background-color 0.3s, transform 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button-final:hover {
-            background-color: #303080;
-            transform: translateY(-2px);
-        }
-
-        .cta-button-final.transparent {
-            background-color: transparent;
-            border: 2px solid #3939a5;
-            color: #3939a5;
-        }
-
-        .cta-button-final.transparent:hover {
-            background-color: #3939a5;
-            color: #fff;
-        }
-
-        /* Call to Action Final Section */
-        .call-to-action-final {
-            background-color: #e0f7fa; /* Light blue */
+        /* Styles for the new "Final Call to Action" section */
+        .final-cta-section {
+            background-color: #fff;
             padding: 50px;
             text-align: center;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .call-to-action-final h2 {
+        .final-cta-section h2 {
             color: #3939a5;
             font-size: 2.2rem;
             margin-bottom: 15px;
         }
 
-        .call-to-action-final p {
+        .final-cta-section p {
             font-size: 1.1rem;
             color: #555;
             margin-bottom: 30px;
         }
 
-        /* Keyframe Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .final-cta-section .cta-button {
+            background-color: #3939a5;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in-down {
-            animation: fadeInDown 1s ease-out forwards;
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 1s ease-out forwards;
-            animation-delay: 0.3s; /* Delay for paragraph */
+        .final-cta-section .cta-button:hover {
+            background-color: #303080;
+            transform: translateY(-3px);
         }
 
         /* Responsive Design */
@@ -421,43 +444,54 @@
                 padding: 15px;
             }
 
-            /* Hero Section adjustments */
-            .hero-section {
-                padding: 40px 20px;
-            }
-
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-
-            .hero-section p {
-                font-size: 1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column; /* Stack buttons vertically */
-                gap: 15px;
-            }
-
-            /* Mission & Vision cards */
-            .mission-card, .vision-card {
-                min-width: unset; /* Remove min-width for better stacking */
-                width: 100%; /* Full width on small screens */
-                margin-bottom: 20px; /* Add space between stacked cards */
-            }
-
-            /* Services grid */
-            .services-grid {
+            /* Previous Service grid for mobile */
+            .service-grid {
                 grid-template-columns: 1fr; /* Single column */
             }
 
-            .services-overview-section h2,
-            .call-to-action-final h2 {
+            /* New Services Page Content Responsiveness */
+            .hero-section-services {
+                padding: 40px 20px;
+            }
+
+            .hero-section-services h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section-services p {
+                font-size: 1rem;
+            }
+
+            .service-list-grid {
+                grid-template-columns: 1fr; /* Single column for service items */
+            }
+
+            .process-section {
+                padding: 30px;
+            }
+
+            .process-section h2 {
                 font-size: 1.8rem;
             }
 
-            .call-to-action-final {
+            .process-section .subtitle {
+                font-size: 1rem;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr; /* Single column for process steps */
+            }
+
+            .final-cta-section {
                 padding: 30px;
+            }
+
+            .final-cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .final-cta-section p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -489,9 +523,92 @@
             </ul>
         </nav>
 
-         <main class="main-content">
-            <h1 style="text-align: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; color: #3939a5;">Our Services</h1>
-            
+        <main class="main-content">
+            <!-- Main Services List Section (Concise Overview) -->
+            <section id="service-list-new" class="service-list-section">
+                <h2 style="text-align: center; font-size: 2.2rem; font-weight: bold; margin-bottom: 30px; color: #3939a5;">Our Core Services</h2>
+                <div class="service-list-grid">
+                    <!-- Service Item: Web Development -->
+                    <div class="service-item-new">
+                        <i class="fas fa-code"></i>
+                        <h3>Web Development</h3>
+                        <p>From custom website design to robust e-commerce platforms, we build responsive, high-performing websites that captivate your audience and convert visitors into customers.</p>
+                    </div>
+
+                    <!-- Service Item: Graphic Design & Branding -->
+                    <div class="service-item-new">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Graphic Design & Branding</h3>
+                        <p>Crafting compelling visual identities, logos, marketing collateral, and digital assets that ensure your brand stands out and communicates effectively.</p>
+                    </div>
+
+                    <!-- Service Item: IT Networking Solutions -->
+                    <div class="service-item-new">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>IT Networking Solutions</h3>
+                        <p>We design, implement, and manage secure and efficient network infrastructures, ensuring seamless connectivity, data integrity, and optimal IT performance for your business.</p>
+                    </div>
+
+                    <!-- Service Item: Hardware & Software Support -->
+                    <div class="service-item-new">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Hardware & Software Support</h3>
+                        <p>From installation and configuration to troubleshooting and maintenance, we provide comprehensive support for your essential hardware and software systems.</p>
+                    </div>
+
+                    <!-- Service Item: IT Consultation -->
+                    <div class="service-item-new">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>IT Consultation</h3>
+                        <p>Strategic guidance to optimize your technology infrastructure, improve operational efficiency, and make informed decisions that align with your business goals.</p>
+                    </div>
+
+                    <!-- Service Item: Cybersecurity & Data Protection -->
+                    <div class="service-item-new">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Cybersecurity & Data Protection</h3>
+                        <p>Protecting your digital assets with robust security measures, threat detection, and data backup solutions to ensure business continuity and peace of mind.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Process Section -->
+            <section class="process-section">
+                <h2>Our Process</h2>
+                <p class="subtitle">See How We Work</p>
+                <div class="process-steps">
+                    <!-- Step 01 -->
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <h3>Discovery & Consultation</h3>
+                        <p>We kick off with <strong>in-depth discussions</strong> to fully understand your business, project goals, and specific needs in <strong>web development, graphic design, or IT networking</strong>. This ensures our solution is perfectly tailored to you.</p>
+                    </div>
+
+                    <!-- Step 02 -->
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <h3>Strategy & Design</h3>
+                        <p>Based on our discovery, we <strong>develop a clear strategy and detailed project plan</strong>, including design mock-ups for web/graphics or architectural diagrams for networks. We ensure alignment with your vision before execution.</p>
+                    </div>
+
+                    <!-- Step 03 -->
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <h3>Development & Implementation</h3>
+                        <p>Our skilled team brings the plan to life. Whether it's <strong>coding your website, crafting designs, or configuring your network</strong>, we maintain transparency with regular updates and ensure rigorous quality checks throughout this phase.</p>
+                    </div>
+
+                    <!-- Step 04 -->
+                    <div class="step-card">
+                        <div class="step-number">04</div>
+                        <h3>Deployment & Ongoing Support</h3>
+                        <p>Once developed, we seamlessly <strong>deploy your solution</strong>. Our commitment doesn't end there; we provide <strong>ongoing support, maintenance, and optimization</strong> to ensure your digital assets continue to perform flawlessly and evolve with your needs.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detailed Services Section (with Read More) -->
+            <h2 style="text-align: center; font-size: 2.2rem; font-weight: bold; margin-bottom: 30px; color: #3939a5; margin-top: 40px;">Our Detailed Services</h2>
             <section id="services" class="service-grid">
                 <!-- Service 1: User Experience (UX) Design -->
                 <div class="service-card">
@@ -637,6 +754,14 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Final Call to Action Section -->
+            <section class="final-cta-section">
+                <h2>Ready to Transform Your Digital Landscape?</h2>
+                <p>At <strong>One Tech Solutions</strong>, we don't just offer services; we deliver integrated digital solutions that drive real business results. Whether you need a stunning new website, captivating graphic design, or robust IT networking, we're here to make your vision a reality.</p>
+                <p>Don't let disjointed tech hold you back. Let's discuss how our expert team can craft a cohesive strategy for your success.</p>
+                <a href="contact.html" class="cta-button">Contact Us Today</a>
+            </section>
         </main>
     </div>
 
@@ -644,11 +769,20 @@
         document.addEventListener('DOMContentLoaded', function () {
             const hamburgerMenu = document.getElementById('hamburgerMenu');
             const sidenav = document.getElementById('mySidenav');
+            const mainContent = document.querySelector('.main-content'); // Get main content for margin adjustment
 
             // Toggle sidebar and hamburger icon state
             hamburgerMenu.addEventListener('click', function () {
                 sidenav.classList.toggle('open');
                 hamburgerMenu.classList.toggle('open');
+                // Adjust main content margin when sidebar is open/closed on mobile
+                if (window.innerWidth <= 768) {
+                    if (sidenav.classList.contains('open')) {
+                        mainContent.style.marginLeft = '250px'; // Adjust for sidebar width
+                    } else {
+                        mainContent.style.marginLeft = '0';
+                    }
+                }
             });
 
             // Close sidebar when a navigation link is clicked (optional, but good for UX)
@@ -658,6 +792,44 @@
                     if (window.innerWidth <= 768) { // Only close on small screens
                         sidenav.classList.remove('open');
                         hamburgerMenu.classList.remove('open');
+                        mainContent.style.marginLeft = '0';
+                    }
+                });
+            });
+
+            // Handle window resize to adjust main content margin for desktop
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    sidenav.classList.remove('open'); // Ensure sidebar is open on desktop
+                    hamburgerMenu.classList.remove('open'); // Hide hamburger icon on desktop
+                    mainContent.style.marginLeft = '220px'; // Default desktop margin
+                } else {
+                    // On mobile, if sidebar is not open, reset margin
+                    if (!sidenav.classList.contains('open')) {
+                        mainContent.style.marginLeft = '0';
+                    }
+                }
+            });
+
+            // Read More functionality for service cards
+            const readMoreButtons = document.querySelectorAll('.read-more-btn');
+
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const serviceCard = this.closest('.service-card');
+                    const shortDescription = serviceCard.querySelector('.short-description');
+                    const fullDetails = serviceCard.querySelector('.full-details');
+
+                    if (fullDetails.classList.contains('show')) {
+                        // If currently showing full details, hide them and show short description
+                        fullDetails.classList.remove('show');
+                        shortDescription.style.display = 'block';
+                        this.textContent = 'Read More';
+                    } else {
+                        // If currently showing short description, hide it and show full details
+                        shortDescription.style.display = 'none';
+                        fullDetails.classList.add('show');
+                        this.textContent = 'Read Less';
                     }
                 });
             });
