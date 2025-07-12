@@ -19,8 +19,8 @@ module.exports = merge(common, {
             filename: 'services.html', // Output file name
         }),
         new HtmlWebpackPlugin({
-            template: './projects.html',
-            filename: 'projects.html', // Output file name
+            template: './project.html',
+            filename: 'project.html', // Output file name
         }),
         new HtmlWebpackPlugin({
             template: './team.html',
